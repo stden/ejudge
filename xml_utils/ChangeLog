@@ -1,0 +1,280 @@
+2013-02-09 (r7361) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip_mask.c, elem_ip_mask.c, parse_ip.c:
+	IPv6 suport is implemented.
+
+2013-02-09 (r7356) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip.c, parse_ip_mask.c, unparse_ip_mask.c:
+	support for IPv6 is in progress...
+
+2013-02-08 (r7351) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip.c:
+	(xml_parse_ipv6_2) new function;
+	(xml_make_ipv6) new function;
+	(xml_make_ipv4) new function.
+
+2013-02-05 (r7337) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip_mask.c, parse_ip.c, unparse_ip_mask.c, unparse_ip.c:
+	copyright notice is updated;
+	transition to IPv6 support started.
+
+2012-12-09 (r7228) Alexander Chernov  <cher@ejudge.ru>
+
+	* unparse_run_status.c:
+	RUN_SKIPPED status is supported.
+
+2012-11-07 (r7149) Alexander Chernov  <cher@ejudge.ru>
+
+	* unparse_run_status.c:
+	RUN_REJECTED is supported.
+
+2012-09-16 (r7024) Alexander Chernov  <cher@ejudge.ru>
+
+	* unparse_run_status.c: copyright notice is updated;
+	new run statuses RUN_WALL_TIME_LIMIT_ERR, RUN_PENDING_REVIEW are added.
+
+2012-08-20 (r6989) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip.c: copyright notice is updated;
+	<ctype.h>, <string.h>, <stdlib.h>, <errno.h> are included;
+	(do_parse_ip6) new function;
+	(xml_parse_ip6) new function.
+
+2012-06-18 (r6891) Alexander Chernov  <cher@ejudge.ru>
+
+	* attr_ulong.c:
+	initial revision
+
+2011-10-21 (r6491) Alexander Chernov  <cher@ejudge.ru>
+
+	* attr_date.c: copyright notice is updated;
+	use of 'xml_parse_date' is updated.
+
+	* attr_int.c: copyright notice is updated;
+	'xml_err_file' is used for output, if non-NULL.
+
+	* err_variables.c: copyright notice is updated;
+	'xml_err_file' global variable is added.
+
+	* parse_bool.c, parse_int.c, parse_ip.c, parse_ip_mask.c: copyright notice is updated;
+	(parse_ip_mask) 'log_f' parameter is added.
+
+	* parse_date.c:
+	(xml_parse_date) 'log_f' parameter is added.
+
+	* xml_err.c, xml_err_a.c: copyright notice is updated;
+	'xml_err_file' is used for output, if non-NULL.
+
+2011-03-26 (r6129) Alexander Chernov  <cher@ejudge.ru>
+
+	* empty_text.c, parse_date.c:
+	copyright notice is updated;
+	"reuse_xalloc.h" is included instead of <reuse/xalloc.h>.
+
+2010-08-03 (r5970) Alexander Chernov  <cher@ejudge.ru>
+
+	* unparse_run_status.c: copyright notice is updated;
+	Ticket #35.
+
+2009-08-27 (r5582) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_date.c:
+	win32 compilation fixes.
+
+2009-07-20 (r5576) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_date.c:
+	win32 compilation fixes.
+
+2008-12-02 (r5382) Alexander Chernov  <cher@ejudge.ru>
+
+	* unparse_text.c: copyright notice is updated;
+	<malloc.h> is included under MinGW.
+
+2008-11-17 (r5328) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip.c, parse_ip_mask.c: copyright notice is improved;
+	  error checking is improved.
+
+2008-11-15 (r5303) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_date.c: copyright notice is updated;
+	<ctype.h>, <stdlib.h> are included;
+	(xml_parse_date) multiple different date formats are supported.
+
+2008-10-03 (r5143) Alexander Chernov  <cher@ejudge.ru>
+
+	* empty_text.c: copyright notice is updated;
+	(xml_empty_text_c) new function.
+
+	* attr_bool.c: copyright notice is updated;
+	  `attr' parameter is a const pointer.
+
+2007-11-20 (r4520) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip.c: copyright notice is updated;
+	(xml_parse_ip) PYTHON module is supported.
+
+2006-09-25 (r3433) Alexander Chernov  <cher@ejudge.ru>
+
+	* parse_ip.c: copyright notice is updated;
+	(xml_parse_ip) no error is reported, if line <= 0.
+
+2006-08-07 (r3226) Alexander Chernov  <cher@ispras.ru>
+
+	* err_get_attr_name.c, err_get_elem_name.c, err_top_level_s.c, err_attr_undefined_s.c, err_elem_undefined_s.c:
+	initial revision.
+
+	* err_variables.c:
+	copyright notice is updated;
+	"expat_iface.h" is included;
+	`xml_err_elem_names', `xml_err_attr_names' are removed;
+	`xml_err_spec' is added.
+
+	* err_attr_undefined.c, err_attrs.c, err_elem_empty.c, err_attr_not_allowed.c, err_elem_undefined.c, err_nested_elems.c, err_elem_not_allowed.c, err_attr_invalid.c, err_elem_redefined.c, err_elem_invalid.c, err_top_level.c:
+	`xml_err_spec' variable is used instead of `xml_err_elem_names' and
+	  `xml_err_attr_names';
+	default element and attribute tags are supported.
+
+	* leaf_elem.c, empty_text.c:
+	copyright notice is updated;
+	`xml_err_spec' variable is used instead of `xml_err_elem_names' and
+	  `xml_err_attr_names';
+	default element and attribute tags are supported.
+
+2006-07-07 (r3212) Alexander Chernov  <cher@ispras.ru>
+
+	* attr_bool_byte.c:
+	initial revision
+
+2006-07-06 (r3207) Alexander Chernov  <cher@ispras.ru>
+
+	* attr_date.c, err_attr_not_allowed.c, err_attr_invalid.c, attr_int.c:
+	`struct xml_attn' -> `struct xml_attr'.
+
+	* xml_err_a.c, attr_bool.c:
+	copyright notice is updated;
+	`struct xml_attn' -> `struct xml_attr'.
+
+2006-06-26 (r3182) Alexander Chernov  <cher@ispras.ru>
+
+	* parse_int_attr.c: file is renamed to `attr_int.c'.
+
+	* attr_int.c: file is renamed from `parse_int_attr.c';
+	  copyright notice is updated;
+	(xml_attr_int) renamed from `xml_parse_int_attr'.
+
+2006-06-25 (r3179) Alexander Chernov  <cher@ispras.ru>
+
+	* attr_date.c:
+	initial revision
+
+2006-06-25 (r3170) Alexander Chernov  <cher@ispras.ru>
+
+	* parse_date.c: copyright notice is updated;
+	(xml_parse_date) error is reported via `err' only if
+	  path != NULL or line > 0.
+
+	* parse_bool.c: initial revision.
+
+2006-06-24 (r3161) Alexander Chernov  <cher@ispras.ru>
+
+	* err_elem_redefined.c: copyright notice is updated;
+	(xml_err_elem_redefined) return type is `int', always returns -1.
+
+	* err_top_level.c: copyright notice is updated;
+	(xml_err_top_level) return type is `int', always returns -1.
+
+	* err_attr_undefined.c: copyright notice is updated;
+	(xml_err_attr_undefined) return type is `int', always returns -1.
+
+	* err_attrs.c: copyright notice is updated;
+	(xml_err_attrs) return type is `int', always returns -1.
+
+	* err_attr_not_allowed.c: copyright notice is updated;
+	(xml_err_attr_not_allowed) return type is `int', always returns -1.
+
+	* err_elem_undefined.c: copyright notice is updated;
+	(xml_err_elem_undefined) return type is `int', always returns -1.
+
+	* err_nested_elems.c: copyright notice is updated;
+	(xml_err_nested_elems) return type is `int', always returns -1.
+
+	* err_elem_not_allowed.c: copyright notice is updated;
+	(xml_err_elem_not_allowed) return type is `int', always returns -1.
+
+	* err_attr_invalid.c: copyright notice is updated;
+	(xml_err_attr_invalid) return type is `int', always returns -1.
+
+	* err_elem_invalid.c: initial revision.
+
+	* err_elem_empty.c: initial revision.
+
+	* unparse_bool.c: initial revision.
+
+2006-06-10 (r3156) Alexander Chernov  <cher@ispras.ru>
+
+	* ChangeLog:
+	Transition from CVS to SVN.
+
+2005-11-25  Alexander Chernov  <cher@ispras.ru>
+
+	* parse_ip_mask.c, parse_int_attr.c, parse_ip.c, parse_int.c, parse_date.c, xml_err.c, xml_err_a.c:
+	Copyright notice is updated;
+	"pathutl.h" is replaced with "errlog.h"
+
+2005-11-04  Alexander Chernov  <cher@ispras.ru>
+
+	* parse_ip.c:
+	(xml_parse_ip) "ej_ip_t" type is used instead of unsigned int.
+
+	* unparse_ip.c:
+	(xml_unparse_ip) "ej_ip_t" type is used instead of unsigned int.
+
+	* parse_ip_mask.c:
+	(xml_parse_ip_mask) "ej_ip_t" type is used instead of unsigned int.
+
+	* unparse_ip_mask.c:
+	(xml_unparse_ip_mask) "ej_ip_t" type is used instead of unsigned int.
+
+2005-08-07  Alexander Chernov  <cher@ispras.ru>
+
+	* parse_ip_mask.c:
+	(xml_parse_ip_mask) added support for default mask "0" (addr == 0
+	  && mask == 0).
+
+	* unparse_ip_mask.c:
+	(unparse_ip_mask) added support for "default" mask (addr == 0 &&
+	  mask == 0). This mask is generated as "0".
+
+2005-06-23  Alexander Chernov  <cher@ispras.ru>
+
+	* parse_ip_mask.c, unparse_ip_mask.c: initial revision
+
+2005-05-11  Alexander Chernov  <cher@ispras.ru>
+
+	* parse_date.c: copyright notice is updated;
+	(xml_parse_date) `tm_isdst' field is properly initialized with -1.
+
+2005-04-25  Alexander Chernov  <cher@ispras.ru>
+
+	* parse_int_attr.c, unparse_run_status.c: initial revision
+
+	* leaf_elem.c: copyright notice is updated;
+	(xml_leaf_elem) new parameter `empty_allowed_flag' is added. if this
+	  parameter is set to 1, the element value may be an empty string
+	 (but not NULL).
+
+2004-11-07  Alexander Chernov  <cher@ispras.ru>
+
+	* attr_bool.c, elem_ip_mask.c, empty_text.c, err_attr_invalid.c, err_attr_not_allowed.c, err_attr_undefined.c, err_attrs.c, err_elem_not_allowed.c, err_elem_redefined.c, err_elem_undefined.c, err_nested_elems.c, err_top_level.c, err_variables.c, leaf_elem.c, xml_err.c, xml_err_a.c:
+	initial revision
+
+2004-10-31  Alexander Chernov  <cher@ispras.ru>
+
+	* parse_date.c, parse_int.c, parse_ip.c, unparse_date.c, unparse_ip.c, unparse_text.c:
+	initial revision
+

@@ -1,0 +1,70 @@
+2013-02-08 (r7349) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	IPv6 is supported.
+
+2013-02-05 (r7339) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	copyright notice is updated;
+	ej_ip_t -> ej_ip4_t;
+	transition to IPv6 support is started.
+
+2012-05-05 (r6799) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c: copyright notice is updated;
+	(parse_spec_func) invalid IPs are replaced with "127.0.0.127".
+
+2011-10-21 (r6492) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	(prepare_func) use of 'xml_parse_int' is updated;
+	(parse_spec_func) use of 'xml_parse_ip' is updated.
+
+2011-07-17 (r6411) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	(prepare_func) 'const' added to 'config' parameter.
+
+2011-03-27 (r6188) Alexander Chernov  <cher@ejudge.ru>
+
+	* main.make, Makefile.in:
+	reuse dependency is removed.
+
+2011-03-27 (r6154) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	"reuse_osdeps.h" is included instead of <reuse/osdeps.h>.
+
+2011-03-26 (r6140) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	"reuse_logger.h" is used instead of <reuse/logger.h>.
+
+2011-03-26 (r6126) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	copyright notice is updated;
+	"reuse_xalloc.h" is included instead of <reuse/xalloc.h>.
+
+2010-01-06 (r5604) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.h: copyright notice is updated;
+	EJUDGE_SKIP_MYSQL feature check is added to avoid inclusion
+	of mysql.h.
+
+2008-11-27 (r5365) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	(query_func) `do_query' is used to support reconnect;
+	(query_one_row_func) the same.
+
+2008-11-15 (r5302) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.c:
+	(parse_spec_func) the hour value is not set to 12 for date columns.
+
+2008-11-12 (r5280) Alexander Chernov  <cher@ejudge.ru>
+
+	* common_mysql.h, common_mysql.c: implemented.
+

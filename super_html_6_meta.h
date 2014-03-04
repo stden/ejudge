@@ -1,0 +1,223 @@
+// This is an auto-generated file, do not edit
+// Generated 2011/05/22 11:43:29
+
+#ifndef __SUPER_HTML_6_META_H__
+#define __SUPER_HTML_6_META_H__
+
+#include <stdlib.h>
+
+enum
+{
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_contest_id = 1,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_group_id,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_other_login,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_other_email,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_send_email,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_confirm_email,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_reg_password1,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_reg_password2,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_reg_sha1,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_1,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_2,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_3,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_4,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_5,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_6,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_7,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_8,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_field_9,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_reg_cnts_create,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_other_contest_id_1,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_cnts_status,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_is_invisible,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_is_banned,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_is_locked,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_is_incomplete,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_is_disqualified,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_cnts_use_reg_passwd,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_cnts_null_passwd,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_cnts_password1,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_cnts_password2,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_cnts_sha1,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_cnts_name,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_group_create,
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_other_group_id,
+
+  META_SS_OP_PARAM_USER_CREATE_ONE_ACTION_LAST_FIELD,
+};
+
+struct ss_op_param_USER_CREATE_ONE_ACTION;
+
+int meta_ss_op_param_USER_CREATE_ONE_ACTION_get_type(int tag);
+size_t meta_ss_op_param_USER_CREATE_ONE_ACTION_get_size(int tag);
+const char *meta_ss_op_param_USER_CREATE_ONE_ACTION_get_name(int tag);
+const void *meta_ss_op_param_USER_CREATE_ONE_ACTION_get_ptr(const struct ss_op_param_USER_CREATE_ONE_ACTION *ptr, int tag);
+void *meta_ss_op_param_USER_CREATE_ONE_ACTION_get_ptr_nc(struct ss_op_param_USER_CREATE_ONE_ACTION *ptr, int tag);
+int meta_ss_op_param_USER_CREATE_ONE_ACTION_lookup_field(const char *name);
+
+struct meta_methods;
+extern const struct meta_methods meta_ss_op_param_USER_CREATE_ONE_ACTION_methods;
+
+
+enum
+{
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_contest_id = 1,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_group_id,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_first_serial,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_last_serial,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_login_template,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_reg_random,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_reg_password_template,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_reg_sha1,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_1,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_2,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_3,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_4,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_5,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_6,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_7,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_8,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_field_9,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_reg_cnts_create,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_other_contest_id_1,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_cnts_status,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_is_invisible,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_is_banned,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_is_locked,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_is_incomplete,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_is_disqualified,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_cnts_use_reg_passwd,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_cnts_null_passwd,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_cnts_random_passwd,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_cnts_password_template,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_cnts_sha1,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_cnts_name_template,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_group_create,
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_other_group_id,
+
+  META_SS_OP_PARAM_USER_CREATE_MANY_ACTION_LAST_FIELD,
+};
+
+struct ss_op_param_USER_CREATE_MANY_ACTION;
+
+int meta_ss_op_param_USER_CREATE_MANY_ACTION_get_type(int tag);
+size_t meta_ss_op_param_USER_CREATE_MANY_ACTION_get_size(int tag);
+const char *meta_ss_op_param_USER_CREATE_MANY_ACTION_get_name(int tag);
+const void *meta_ss_op_param_USER_CREATE_MANY_ACTION_get_ptr(const struct ss_op_param_USER_CREATE_MANY_ACTION *ptr, int tag);
+void *meta_ss_op_param_USER_CREATE_MANY_ACTION_get_ptr_nc(struct ss_op_param_USER_CREATE_MANY_ACTION *ptr, int tag);
+int meta_ss_op_param_USER_CREATE_MANY_ACTION_lookup_field(const char *name);
+
+struct meta_methods;
+extern const struct meta_methods meta_ss_op_param_USER_CREATE_MANY_ACTION_methods;
+
+
+enum
+{
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_contest_id = 1,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_group_id,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_send_email,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_confirm_email,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_reg_random,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_reg_sha1,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_1,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_2,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_3,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_4,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_5,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_6,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_7,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_8,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_field_9,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_reg_cnts_create,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_other_contest_id_1,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_cnts_status,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_is_invisible,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_is_banned,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_is_locked,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_is_incomplete,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_is_disqualified,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_cnts_use_reg_passwd,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_cnts_null_passwd,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_cnts_random_passwd,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_cnts_sha1,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_cnts_name_template,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_group_create,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_other_group_id,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_separator,
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_charset,
+
+  META_SS_OP_PARAM_USER_CREATE_FROM_CSV_ACTION_LAST_FIELD,
+};
+
+struct ss_op_param_USER_CREATE_FROM_CSV_ACTION;
+
+int meta_ss_op_param_USER_CREATE_FROM_CSV_ACTION_get_type(int tag);
+size_t meta_ss_op_param_USER_CREATE_FROM_CSV_ACTION_get_size(int tag);
+const char *meta_ss_op_param_USER_CREATE_FROM_CSV_ACTION_get_name(int tag);
+const void *meta_ss_op_param_USER_CREATE_FROM_CSV_ACTION_get_ptr(const struct ss_op_param_USER_CREATE_FROM_CSV_ACTION *ptr, int tag);
+void *meta_ss_op_param_USER_CREATE_FROM_CSV_ACTION_get_ptr_nc(struct ss_op_param_USER_CREATE_FROM_CSV_ACTION *ptr, int tag);
+int meta_ss_op_param_USER_CREATE_FROM_CSV_ACTION_lookup_field(const char *name);
+
+struct meta_methods;
+extern const struct meta_methods meta_ss_op_param_USER_CREATE_FROM_CSV_ACTION_methods;
+
+
+enum
+{
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_other_user_id = 1,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_contest_id,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_group_id,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_other_contest_id_1,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_status,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_is_invisible,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_is_banned,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_is_locked,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_is_incomplete,
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_is_disqualified,
+
+  META_SS_OP_PARAM_USER_CREATE_REG_ACTION_LAST_FIELD,
+};
+
+struct ss_op_param_USER_CREATE_REG_ACTION;
+
+int meta_ss_op_param_USER_CREATE_REG_ACTION_get_type(int tag);
+size_t meta_ss_op_param_USER_CREATE_REG_ACTION_get_size(int tag);
+const char *meta_ss_op_param_USER_CREATE_REG_ACTION_get_name(int tag);
+const void *meta_ss_op_param_USER_CREATE_REG_ACTION_get_ptr(const struct ss_op_param_USER_CREATE_REG_ACTION *ptr, int tag);
+void *meta_ss_op_param_USER_CREATE_REG_ACTION_get_ptr_nc(struct ss_op_param_USER_CREATE_REG_ACTION *ptr, int tag);
+int meta_ss_op_param_USER_CREATE_REG_ACTION_lookup_field(const char *name);
+
+struct meta_methods;
+extern const struct meta_methods meta_ss_op_param_USER_CREATE_REG_ACTION_methods;
+
+
+enum
+{
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_other_user_id = 1,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_other_contest_id,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_contest_id,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_group_id,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_next_op,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_status,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_is_invisible,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_is_banned,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_is_locked,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_is_incomplete,
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_is_disqualified,
+
+  META_SS_OP_PARAM_USER_EDIT_REG_ACTION_LAST_FIELD,
+};
+
+struct ss_op_param_USER_EDIT_REG_ACTION;
+
+int meta_ss_op_param_USER_EDIT_REG_ACTION_get_type(int tag);
+size_t meta_ss_op_param_USER_EDIT_REG_ACTION_get_size(int tag);
+const char *meta_ss_op_param_USER_EDIT_REG_ACTION_get_name(int tag);
+const void *meta_ss_op_param_USER_EDIT_REG_ACTION_get_ptr(const struct ss_op_param_USER_EDIT_REG_ACTION *ptr, int tag);
+void *meta_ss_op_param_USER_EDIT_REG_ACTION_get_ptr_nc(struct ss_op_param_USER_EDIT_REG_ACTION *ptr, int tag);
+int meta_ss_op_param_USER_EDIT_REG_ACTION_lookup_field(const char *name);
+
+struct meta_methods;
+extern const struct meta_methods meta_ss_op_param_USER_EDIT_REG_ACTION_methods;
+
+#endif

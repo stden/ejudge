@@ -1,0 +1,111 @@
+#!/bin/sh
+# $Id: gcj-version.in 5550 2009-02-19 18:14:43Z cher $
+# Copyright (c) 2005-2008 Alexander Chernov <cher@ejudge.ru>
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+
+common_config() {
+  echo 'long_name="GNU Java"'
+  echo 'src_sfx=".java"'
+  echo 'arch="linux-shared"'
+  echo 'insecure=1'
+}
+
+failure() {
+  rm -f conftest*
+  echo 'version='
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'GCJRUN=false'
+  echo 'GCJDIR='
+  [ "${verbose}" = 1 ] && echo "no" >&2
+  exit 1
+}
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+if [ x"$1" = x-v ]
+then
+  verbose=1
+  shift
+fi
+
+# recheck the language
+if [ x"$1" = x-r ]
+then
+  arg="$2"
+  [ x"$2" != x ] && GCJRUN="$2"
+  [ "${GCJRUN}" = "" ] && GCJRUN="gcj"
+
+  [ "${verbose}" = 1 ] && echo -n "checking whether GNU Java (GCJ) is available..." >&2
+  "${GCJRUN}" -v >/dev/null 2>/dev/null || failure
+  version=`"${GCJRUN}" --version | grep gcj | gawk '{ print $3; }'` || failure
+  [ "${version}" != "" ] || failure
+cat > conftest.java <<EOF
+class Main
+{
+  public static void main(String args[])
+  {
+    System.exit(0);
+  }
+}
+EOF
+  "${GCJRUN}" --main=Main conftest.java -o conftest 2>/dev/null >/dev/null || failure
+  [ -x conftest ] || failure
+  ./conftest 2>/dev/null >/dev/null || failure
+
+  rm -f ./conftest*
+  GCJDIR=`dirname "${GCJRUN}"`
+  [ "${GCJDIR}" = . ] && GCJDIR=""
+  echo 'version="'"${version}"'"'
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'GCJRUN="'"${GCJRUN}"'"'
+  echo 'GCJDIR="'"${GCJDIR}"'"'
+  [ "${verbose}" = 1 ] && echo "yes, ${GCJRUN}, ${version}" >&2
+  exit 0
+fi
+
+if [ x"$1" = x-l ]
+then
+  echo "GNU Java compiler [http://gcc.gnu.org]"
+  exit 0
+fi
+
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/gcj.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  GCJRUN="gcj"
+  GCJDIR=
+fi
+
+if [ x"${GCJRUN}" = x -o x"${GCJRUN}" = xfalse ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${GCJDIR}" != x ]
+then
+    PATH="${GCJDIR}:${PATH}"
+fi
+
+if [ x"$1" = x-p ]
+then
+    echo "${GCJRUN}"
+    exit 0
+fi
+    
+"${GCJRUN}" --version 2>/dev/null >/dev/null || exit 1
+
+[ x"$1" = x-f ] && echo -n "GNU Java "
+
+"${GCJRUN}" --version | grep gcj | gawk '{ print $3; }'
+[ $? != 0 -a $? != 1 ] && exit 1
+exit 0

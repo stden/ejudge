@@ -1,0 +1,127 @@
+#!/bin/sh
+# $Id: mcs-version.in 5550 2009-02-19 18:14:43Z cher $
+# Copyright (c) 2005-2008 Alexander Chernov <cher@ejudge.ru>
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+
+common_config() {
+  echo 'long_name="Mono C#"'
+  echo 'src_sfx=".cs"'
+  echo 'exe_sfx=".exe"'
+  echo 'arch="msil"'
+  echo 'insecure=1'
+}
+
+failure() {
+  rm -f conftest*
+  echo 'version='
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'MONORUN=false'
+  echo 'MONODIR='
+  echo 'MONOVER='
+  echo 'MCSRUN=false'
+  echo 'MCSDIR='
+  [ "${verbose}" = 1 ] && echo "no" >&2
+  exit 1
+}
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+if [ x"$1" = x-v ]
+then
+  verbose=1
+  shift
+fi
+
+# recheck the language
+if [ x"$1" = x-r ]
+then
+  arg="$2"
+  [ x"$2" != x ] && MCSRUN="$2"
+  [ "${MCSRUN}" = "" ] && MCSRUN="gmcs"
+
+  [ "${verbose}" = 1 ] && echo -n "checking whether Mono C# is available..." >&2
+  MCSDIR=`dirname "${MCSRUN}"` || failure
+  if [ "${MCSDIR}" = . ]
+  then
+    MONORUN=mono
+    MONODIR=
+    MCSDIR=
+  else
+    MONORUN="${MCSDIR}/mono"
+    MONODIR="${MCSDIR}"
+  fi
+  "${MONORUN}" --version >/dev/null 2>&1 || failure
+  MONOVER=`"${MONORUN}" --version 2>&1 | grep "version" | awk '{gsub(",","",$5); print $5;}'` || failure
+  [ "${MONOVER}" != "" ] || failure
+  "${MCSRUN}" --version >/dev/null 2>&1 || failure
+  version=`"${MCSRUN}" --version 2>&1 | grep "version" | awk '{gsub(",","",$5); print $5;}'` || failure
+  [ "${version}" != "" ] || failure
+  cat > conftest.cs <<EOF
+public class conftest
+{
+  public static void Main()
+  {
+    System.Console.WriteLine("OK");
+  }
+}
+EOF
+  "${MCSRUN}" conftest.cs -out:conftest.exe >/dev/null 2>&1 || failure
+  [ -f conftest.exe ] || failure
+  "${MONORUN}" conftest.exe >/dev/null 2>&1 || failure
+
+  rm -f ./conftest*
+  echo 'version="'"${version}"'"'
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'MONORUN="'"${MONORUN}"'"'
+  echo 'MONODIR="'"${MONODIR}"'"'
+  echo 'MONOVER="'"${MONOVER}"'"'
+  echo 'MCSRUN="'"${MCSRUN}"'"'
+  echo 'MCSDIR="'"${MCSDIR}"'"'
+  [ "${verbose}" = 1 ] && echo "yes, ${MCSRUN}, ${version}" >&2
+  exit 0
+fi
+
+if [ x"$1" = x-l ]
+then
+  echo "Mono C# compiler [http://www.mono-project.com]"
+  exit 0
+fi
+
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/mcs.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  MCSRUN="gmcs"
+  MCSDIR=""
+fi
+
+if [ x"${MCSRUN}" = x -o x"${MCSRUN}" = xfalse ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${MCSDIR}" != x ]
+then
+  PATH="${MCSDIR}/bin:${PATH}"
+fi
+
+if [ x"$1" = x-p ]
+then
+    echo "${MCSRUN}"
+    exit 0
+fi
+
+"${MCSRUN}" --version >/dev/null 2>&1 || exit 1
+    
+[ x"$1" = x-f ] && echo -n "Mono C# "
+
+"${MCSRUN}" --version 2>&1 | grep "version" | awk '{gsub(",","",$5); print $5;}'

@@ -1,0 +1,224 @@
+2012-06-18 (r6892) Alexander Chernov  <cher@ejudge.ru>
+
+	* t6.c: copyright notice is updated;
+	patch for the linux kernel v3 is supported (no millisection rlimit).
+
+2011-10-19 (r6482) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: ej-make-archive program is added.
+
+2011-10-19 (r6481) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej-make-archive.c:
+	initial revision
+
+2011-05-02 (r6293) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: copyright notice is updated;
+	rules for compilation of explicitly 32- and 64-bit versions
+	of libdropcaps.so are added.
+
+2010-01-03 (r5602) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: copyright notice is updated;
+	new test `t8' is added.
+
+	* t8.c: initial revision
+	new test for kernel-based time-limit detection.
+
+2008-02-17 (r4678) Alexander Chernov  <cher@ejudge.ru>
+
+	* bccemu.c, bpcemu2.c, bppemu.c, dosrun3.c, qbemu.c: copyright notice is updated;
+	(main) EJUDGE_LOCAL_DIR is checked as primary location for dosemu.
+
+2007-12-22 (r4629) Alexander Chernov  <cher@ejudge.ru>
+
+	* dosrun3.c:
+	(main) "INPUT_FILE", "OUTPUT_FILE" environment vars are supported.
+
+2007-08-08 (r4296) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in:
+	all programs are installed to `${libexecdir}/ejudge/lang' instead of
+	  `${libexecdir}/ejudge'.
+
+	* bccemu.c, bppemu.c, qbemu.c, bpcemu2.c, dosrun3.c: copyright notice is updated;
+	"../config.h" is included;
+	the path to the dos work directory is configured using the
+	  EJUDGE_CONTESTS_HOME_DIR from the "config.h".
+
+2007-08-04 (r4267) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: `-lcap' library name is now configured by the top-level
+	  `configure' script.
+
+2007-08-02 (r4259) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: copyright year is updated;
+	  -DHAVE_CONFIG_H option is addeg to CFLAGS.
+
+	* capexec.c, libdropcaps.c: copyright notice is updated;
+	"../config.h" is included;
+	<sys/ptrace.h> is included;
+	CAP_SYS_OPERATIONS stuff is compiled only if HAVE_CAP_SYS_OPERATIONS
+	  is defined in ../config.h;
+	new secure exec interface (ptrace based) is supported.
+
+2007-08-02 (r4257) Alexander Chernov  <cher@ejudge.ru>
+
+	* captest/t1.c, captest/t2_helper.c, captest/t2.c, captest/t2_helper_2.c, captest/t3.c, captest/t4.c, captest/t5_helper.c, captest/t5.c, captest/t6.c, captest/Makefile, captest:
+	initial revision
+
+2007-01-03 (r3812) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej-javac.c: copyright year is updated;
+	(main) manifest file is used instead of `-e' jar option.
+
+2006-12-14 (r3744) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej-javac.c:
+	`invalid class name' error is reported, if no class name is detected.
+
+2006-12-14 (r3740) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej-javac.c: working version is completed.
+
+2006-12-14 (r3739) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: rules for ej-javac are added.
+
+	* ej-javac.c: initial revision.
+
+2006-06-19 (r3158) Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in:
+	libdropcaps.so is compiled with -fPIC option.
+
+2006-06-10 (r3156) Alexander Chernov  <cher@ispras.ru>
+
+	* ChangeLog:
+	Transition from CVS to SVN.
+
+2006-02-25  Alexander Chernov  <cher@ispras.ru>
+
+	* libdropcaps.c:
+	copyright notice is updated;
+	(init) updated for kernel 2.6.*.
+
+2006-02-25  Alexander Chernov  <cher@ispras.ru>
+
+	* capexec.c:
+	copyright notice is updated;
+	(main) updated for kernel 2.6.*.
+
+2005-11-02  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: copyright notice is updated;
+	WPTRSIGN variable is added and used in CFLAGS, this variable
+	is autoconfigured by configure.
+
+	* bccemu.c, bpcemu2.c, bppemu.c, dosrun3.c, qbemu.c:
+	copyright notice is updated;
+	(main) "missing sentinel point" warning is fixed.
+
+2004-05-05  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: `install' rule is corrected.
+
+	* Makefile.in: copyright notice is updated;
+	renamed from Makefile;
+	integrated the top-level configure framework;
+	added `distclean' and `install' rules.
+
+	* dosrun3.c: copyright notice is updated;
+	(main) unised variable `pid' is removed.
+
+2004-05-04  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: `install' rule is corrected.
+
+	* Makefile.in: copyright notice is updated;
+	renamed from Makefile;
+	integrated the top-level configure framework;
+	added `distclean' and `install' rules.
+
+	* dosrun3.c: copyright notice is updated;
+	(main) unised variable `pid' is removed.
+
+	* Makefile: Renamed to Makefile.in
+
+2003-10-05  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile, Makefile.in: `qbemu' program is added.
+
+	* bppemu.c: minor comment change
+
+	* bccemu.c:
+	(main) the command line for dosemu changed: added `keystroke' and
+	  `dpmi' parameters.
+
+	* qbemu.c: initial revision
+
+	* bpcemu2.c, bppemu.c, dosrun3.c:
+	(main) the command line for dosemu changed: added `keystroke' and
+	  `dpmi' parameters.
+
+2003-03-20  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile, Makefile.in:
+	conditional compilation for 2.2 kernels is removed.
+
+2003-02-24  Alexander Chernov  <cher@ispras.ru>
+
+	* dosproxy.c: copyright notice updated.
+
+	* dosrun3.c: minor changes.
+
+	* dosproxy.c: Heap size increased to 8K.
+	Standard streams are not closed.
+
+2003-02-16  Alexander Chernov  <cher@ispras.ru>
+
+	* dosrun3.c, bpcemu2.c: copyright notice is updated.
+
+	* Makefile, Makefile.in: copyright notice is updated;
+	`bppemu', `bccemu' utilities added.
+
+	* bccemu.c, bppemu.c: initial revision
+
+2003-01-27  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile, Makefile.in:
+	`uname -r' is used to get the kernel version;
+	libdropcaps.so is added to the list of targets;
+	-lcap library is used for linking;
+	rules for libdropcaps.so are added.
+
+	* libdropcaps.c: initial revision
+
+2002-12-03  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile, Makefile.in: Initial revision
+
+2002-12-01  Alexander Chernov  <cher@ispras.ru>
+
+	* dosproxy.c, dosrun3.c, bpcemu2.c: Initial revision
+
+2002-10-02  Alexander Chernov  <cher@ispras.ru>
+
+	* capexec.c: compile-command variable is slightly changed.
+
+2002-06-16  Alexander Chernov  <cher@ispras.ru>
+
+	* capexec.c: compilation command is changed.
+
+2001-12-02  Alexander Chernov  <cher@ispras.ru>
+
+	* dosrun2.c: initial revision
+
+2001-11-09  Alexander Chernov  <cher@ispras.ru>
+
+	* capexec.c: minor changes
+
+	* capexec.c: initial revision
+

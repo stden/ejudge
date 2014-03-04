@@ -1,0 +1,6 @@
+// $Id: fileio.policy 5550 2009-02-19 18:14:43Z cher $
+// This Java policy file allows reading/writing any file in
+// the testing directory.
+grant {
+  permission java.io.FilePermission "./*", "read,write";
+};

@@ -1,0 +1,165 @@
+# -*- Makefile -*-
+# $Id: Makefile.in 7511 2013-10-30 06:00:59Z cher $
+# @configure_input@
+
+# Copyright (C) 2004-2013 Alexander Chernov <cher@ejudge.ru> */
+
+# This program is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2 of the License, or (at your option) any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+# Lesser General Public License for more details.
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+bindir=@bindir@
+datarootdir=@datarootdir@
+datadir=@datadir@
+includedir=@includedir@
+libdir=@libdir@
+libexecdir=@libexecdir@
+cgibindir=@cgibindir@
+
+CGI_PROG_SUFFIX=@ac_cv_cgi_suffix@
+STATIC=@ac_cv_static@
+NO_KERNEL=@ac_cv_no_kernel@
+ENABLE_NLS=@ac_cv_nls@
+PRESERVE=@ac_cv_preserve_scripts@
+
+XGETTEXT=@XGETTEXT@
+MSGMERGE=@MSGMERGE@
+MSGFMT=@MSGFMT@
+
+REUSE_DIR=@ac_cv_reuse_root@
+REUSE_CONF=@ac_cv_reuse_config@
+REUSE_INCL_OPT=@ac_cv_reuse_include_opt@
+REUSE_LIB_OPT=@ac_cv_reuse_lib_opt@
+
+EXPAT_DIR=@ac_cv_expat_root@
+EXPAT_INCL_OPT=@ac_cv_expat_include_opt@
+EXPAT_LIB_OPT=@ac_cv_expat_lib_opt@
+
+LIBCAP_DIR=@ac_cv_libcap_root@
+LIBCAP_INCL_OPT=@ac_cv_libcap_include_opt@
+LIBCAP_LIB_OPT=@ac_cv_libcap_lib_opt@
+
+LANG_SCRIPT_DIR=${libexecdir}/ejudge/lang
+LANG_CONFIG_DIR=@ac_cv_lang_config_dir@
+
+SCRIPTS = \
+ festival
+
+SCRIPTS_IN = \
+ bcc.in\
+ bcc-version.in\
+ bpp.in\
+ bpp-version.in\
+ dcc.in\
+ dcc-version.in\
+ fbc.in\
+ fbc-version.in\
+ fbc-32.in\
+ fbc-32-version.in\
+ fpc.in\
+ fpc-version.in\
+ fpc-32.in\
+ fpc-32-version.in\
+ g++.in\
+ g++-version.in\
+ g++-vg.in\
+ g++-vg-version.in\
+ g++-32.in\
+ g++-32-version.in\
+ g77.in\
+ g77-version.in\
+ gfortran.in\
+ gfortran-version.in\
+ gcc.in\
+ gcc-version.in\
+ gcc-vg.in\
+ gcc-vg-version.in\
+ gcc-32.in\
+ gcc-32-version.in\
+ gcj.in\
+ gcj-version.in\
+ gpc.in\
+ gpc-version.in\
+ gprolog.in\
+ gprolog-version.in\
+ kumir.in\
+ kumir-version.in\
+ mzscheme.in\
+ mzscheme-version.in\
+ nasm-x86.in\
+ nasm-x86-version.in\
+ qb.in\
+ qb-version.in\
+ perl.in\
+ perl-version.in\
+ php.in\
+ php-version.in\
+ python.in\
+ python-version.in\
+ python3.in\
+ python3-version.in\
+ ruby.in\
+ ruby-version.in\
+ tpc.in\
+ tpc-version.in\
+ yabasic.in\
+ yabasic-version.in\
+ javac.in\
+ javac-version.in\
+ mcs.in\
+ mcs-version.in\
+ vbnc.in\
+ vbnc-version.in\
+ make.in\
+ make-version.in\
+ make-vg.in\
+ make-vg-version.in\
+ ghc.in\
+ ghc-version.in\
+ clang.in\
+ clang-version.in\
+ clang-32.in\
+ clang-32-version.in\
+ clang++.in\
+ clang++-version.in\
+ clang++-32.in\
+ clang++-32-version.in\
+ gccgo.in\
+ gccgo-version.in\
+ pasabc-linux.in\
+ pasabc-linux-version.in\
+ runvg.in\
+ runjava.in\
+ runmono.in\
+ runperl.in
+
+POLICIES = \
+ fileio.policy \
+ default.policy
+
+# do nothing on all
+all :
+
+install :
+	mkdir -p "${DESTDIR}${LANG_SCRIPT_DIR}"
+	mkdir -p "${DESTDIR}${LANG_SCRIPT_DIR}/in"
+	for i in ${SCRIPTS_IN}; do j="${DESTDIR}${LANG_SCRIPT_DIR}/in/$$i"; if [ "${PRESERVE}" = 1 ]; then if [ -f "$$j" ]; then rm -f "$$j.new"; install -m 0755 "$$i" "$$j.new"; else install -m 0755 "$$i" "$$j"; fi; else if [ -f "$$j" ]; then if ! diff -q "$$i" "$$j" >/dev/null 2>&1; then rm -f "$$j.old"; mv "$$j" "$$j.old"; fi; fi; install -m 0755 "$$i" "$$j"; fi; done
+	for i in ${SCRIPTS}; do j="${DESTDIR}${LANG_SCRIPT_DIR}/$$i"; if [ "${PRESERVE}" = 1 ]; then if [ -f "$$j" ]; then rm -f "$$j.new"; install -m 0755 "$$i" "$$j.new"; else install -m 0755 "$$i" "$$j"; fi; else if [ -f "$$j" ]; then if ! diff -q "$$i" "$$j" >/dev/null 2>&1; then rm -f "$$j.old"; mv "$$j" "$$j.old"; fi; fi; install -m 0755 "$$i" "$$j"; fi; done
+	install -m 0644 lang_ids.cfg "${DESTDIR}/${LANG_SCRIPT_DIR}"
+	mkdir -p "${DESTDIR}${datadir}/ejudge"
+	for i in ${POLICIES}; do j="${DESTDIR}${datadir}/ejudge/$$i"; if [ -f "$$j" ]; then if ! diff -q "$$i" "$$j" >/dev/null 2>&1; then rm -f "$$j.old"; mv "$$j" "$$j.old"; fi; fi; install -m 0644 "$$i" "$$j"; done
+
+clean:
+
+distclean:
+	rm -f Makefile ${SCRIPTS}
+	rm -f config.d/*
+	-rmdir config.d

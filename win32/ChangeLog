@@ -1,0 +1,536 @@
+2013-01-27 (r7316) Alexander Chernov  <cher@ejudge.ru>
+
+	* curtime.c: copyright notice is updated;
+	(get_current_time_ms) new function.
+
+2012-12-09 (r7222) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	(ejudge_timed_write) 'log' parameter is added;
+	(ejudge_timed_fdgets) 'log' parameter is added.
+
+2012-12-08 (r7216) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c: copyright notice is updated;
+	(ejudge_timed_write) new function;
+	(ejudge_timed_fdgets) new function.
+
+2012-11-18 (r7179) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_Kill) new function;
+	(task_TryProcessGroup) new function;
+	(task_KillProcessGroup) new function.
+
+2012-11-04 (r7136) Alexander Chernov  <cher@ejudge.ru>
+
+	* files_win32.make:
+	obsolete files are removed.
+
+	* reuse_exec.c:
+	(task_Start) APPEND mode is supported for redirected files;
+	(task_IsRealTimeout) stub is added.
+
+2012-10-17 (r7054) Alexander Chernov  <cher@ejudge.ru>
+
+	* cpu.c: copyright notice is updated;
+	(cpu_get_performance_info) new function.
+
+2012-06-18 (r6893) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_NewWait) stub implementation is added.
+
+2012-05-03 (r6790) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c:
+	win32 fixes
+
+2012-04-17 (r6748) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_IgnoreSIGPIPE) new function.
+
+2012-03-23 (r6671) Alexander Chernov  <cher@ejudge.ru>
+
+	* startstop.c: copyright notice is updated;
+	(start_daemon) new function dummy.
+
+2012-01-01 (r6604) Alexander Chernov  <cher@ejudge.ru>
+
+	* pollfds.c:
+	initial revision
+
+2011-04-04 (r6227) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c, reuse_getlastname.c, reuse_getsignalstring.c, reuse_nodename.c, reuse_isabsolutepath.c, reuse_sleep.c, reuse_isfile.c, files_win32.make, reuse_checkaccess.c, reuse_dirname.c, reuse_getworkingdir.c, reuse_logger.c, reuse_errormsg.c:
+	compilation fixes
+
+2011-03-27 (r6182) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	Initial revision. Copied from the reuse library.
+
+2011-03-27 (r6165) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_getsuffix.c, reuse_getsignalstring.c, reuse_getlastname.c, reuse_attachfile.c, reuse_setlock.c, reuse_sleep.c, reuse_isfile.c, reuse_getbasename.c, reuse_makedir.c, reuse_normalize_path.c, reuse_dirname.c, reuse_getworkingdir.c, reuse_errorstring.c, reuse_geterrorstring.c, reuse_findinpath.c, reuse_substsuffix.c, reuse_nodename.c, reuse_rgetlastname.c, reuse_rgetsuffix.c, reuse_isabsolutepath.c, reuse_makedirpath.c, reuse_rgetbasename.c, reuse_checkaccess.c, reuse_errormsg.c, reuse_tempnam.c, reuse_rgetworkingdir.c, reuse_rdirname.c:
+	Initial revision. Copied from the reuse library.
+
+2011-03-27 (r6159) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c, fileutl.c:
+	"reuse_osdeps.h" is included instead of <reuse/osdeps.h>.
+
+2011-03-26 (r6150) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_logger.c:
+	Initial revision. Copied from the reuse library.
+
+2011-03-26 (r6144) Alexander Chernov  <cher@ejudge.ru>
+
+	* files_win32.make, startstop.c:
+	copyright notice is updated;
+	"reuse_logger.h" is used instead of <reuse/logger.h>.
+
+2011-03-26 (r6143) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c, timestamp.c, fileutl.c:
+	"reuse_logger.h" is used instead of <reuse/logger.h>.
+
+2011-03-26 (r6133) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c, timestamp.c, fileutl.c:
+	copyright notice is updated;
+	"reuse_xalloc.h" is included instead of <reuse/xalloc.h>.
+
+2010-10-05 (r6003) Alexander Chernov  <cher@ejudge.ru>
+
+	* file_perms.c: copyright notice is updated;
+	(file_perms_set) new function;
+	(file_perms_get) new function.
+
+2010-06-18 (r5899) Alexander Chernov  <cher@ejudge.ru>
+
+	* files_win32.make:
+	mime_type.c is added.
+
+	* fileutl.c:
+	(write_tmp_file) new function.
+
+2010-06-18 (r5897) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(scan_executable_files) new function (stub yet).
+
+2010-06-17 (r5894) Alexander Chernov  <cher@ejudge.ru>
+
+	* files_win32.make:
+	`run_inverse.c' is added.
+
+2010-01-25 (r5741) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(make_all_dir) "/" are used instead of "\".
+
+2010-01-25 (r5736) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(scan_dir) network drive disconnect is handled.
+
+2010-01-20 (r5700) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(do_remove_directory) new function to do some trickery;
+	(remove_directory_recursively) `do_remove_directory' is used.
+
+2010-01-17 (r5663) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(make_hardlink) new function is added.
+
+2010-01-17 (r5658) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(get_tmp_dir) new function.
+
+2010-01-12 (r5637) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(remove_directory_recursively) new function;
+	(fast_copy_file) new function;
+	(generic_truncate) new function.
+
+2009-08-27 (r5583) Alexander Chernov  <cher@ejudge.ru>
+
+	* files_win32.make:
+	fixes.
+
+	* ej_process.c: copyright notice is updated;
+	stub fixes.
+
+	* fileutl.c:
+	win32 fixes.
+
+2009-07-20 (r5575) Alexander Chernov  <cher@ejudge.ru>
+
+	* open_memstream.c, files_win32.make, startstop.c, fileutl.c, fmemopen.c:
+	win32 compilation fixes.
+
+2009-05-02 (r5561) Alexander Chernov  <cher@ejudge.ru>
+
+	* file_perms.c:
+	initial revision
+
+2009-01-28 (r5546) Alexander Chernov  <cher@ejudge.ru>
+
+	* fmemopen.c, open_memstream.c: copyright notice is updated;
+	file-based implementation of functionality is added.
+
+2008-12-31 (r5536) Alexander Chernov  <cher@ejudge.ru>
+
+	* fmemopen.c:
+	(fmemclose) dumb function is added.
+
+	* open_memstream.c:
+	(close_memstream) dumb function is added.
+
+2008-12-26 (r5498) Alexander Chernov  <cher@ejudge.ru>
+
+	* fmemopen.c:
+	initial revision
+
+2008-12-26 (r5479) Alexander Chernov  <cher@ejudge.ru>
+
+	* open_memstream.c:
+	initial revision
+
+2008-12-25 (r5462) Alexander Chernov  <cher@ejudge.ru>
+
+	* sock_op_get_fds.c, sock_op_get_creds.c, sock_op_put_fds.c, sock_op_enable_creds.c, sock_op_put_creds.c:
+	initial revision
+
+2008-12-02 (r5381) Alexander Chernov  <cher@ejudge.ru>
+
+	* cr_serialize.c: copyright notice is updated;
+	(cr_serialize_init) synced with the unix interface;
+	(cr_serialize_lock) synced with the unix interface;
+	(cr_serialize_unlock) synced with the unix interface.
+
+	* fileutl.c: copyright notice is updated;
+	"ej_limits.h" is included;
+	(scan_dir) synced with the unix interface.
+
+	* interrupt.c: copyright notice is updated;
+	(interrupt_restart_requested) new function.
+
+2008-11-15 (r5299) Alexander Chernov  <cher@ejudge.ru>
+
+	* startstop.c: initial revision.
+
+2006-09-08 (r3335) Alexander Chernov  <cher@ejudge.ru>
+
+	* cr_serialize.c: copyright notice is updated;
+	"prepare_vars.h" is no longer included.
+
+2006-06-10 (r3156) Alexander Chernov  <cher@ispras.ru>
+
+	* ChangeLog:
+	Transition from CVS to SVN.
+
+2006-03-19  Alexander Chernov  <cher@ispras.ru>
+
+	* timestamp.c:
+	copyright notice is updated;
+	functionality is implemented.
+
+2006-03-19  Alexander Chernov  <cher@ispras.ru>
+
+	* full_archive.c:
+	<windows.h>, <zlib.h> are included;
+	(full_archive_open_write) implemented;
+	(full_archive_close) implemented;
+	(full_archive_append_file) implemented.
+
+	* fileutl.c:
+	copyright notice is updated;
+	"settings.h" is included;
+	<malloc.h> is include for `alloca';
+	(scan_dir_add_ignored) implemeted;
+	(scan_dir) packet priority and ignored items are supported.
+
+	* curtime.c:
+	copyright notice is updated;
+	<time.h>, <windows.h> are included;
+	(get_current_time) basically implemented.
+
+	* cr_serialize.c:
+	copyright notice is updated;
+
+	* cpu.c:
+	copyright notice is updated;
+	"errlog.h" is included;
+	(cpu_get_bogomips) reports "not implemented" error and returns -1.
+
+2006-03-18  Alexander Chernov  <cher@ispras.ru>
+
+	* full_archive.c: initial revision
+
+	* cr_serialize.c, fileutl.c, timestamp.c:
+	stubs for functions are added
+
+2005-09-12  Alexander Chernov  <cher@ispras.ru>
+
+	* cpu.c: initial revision
+
+2005-08-19  Alexander Chernov  <cher@ispras.ru>
+
+	* ej_process.c: initial revision
+
+2005-06-15  Alexander Chernov  <cher@ispras.ru>
+
+	* timestamp.c: initial revision
+
+2005-03-03  Alexander Chernov  <cher@ispras.ru>
+
+	* curtime.c: initial revision
+
+2005-01-24  Alexander Chernov  <cher@ispras.ru>
+
+	* cr_serialize.c, interrupt.c: copyright notice is updated;
+	an implementation for win32 is ready (thanks to K. Khlebnikov).
+
+2005-01-19  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(make_symlink) added stub;
+	(generic_file_size) implementation added.
+
+2004-11-13  Alexander Chernov  <cher@ispras.ru>
+
+	* interrupt.c: stubs, which generate fatal errors are added.
+
+	* cr_serialize.c, interrupt.c: initial revision
+
+2002-12-06  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: copyright notice is updated;
+	names of reuse include files are fixed.
+
+2002-01-07  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c: copyright notice is updated;
+	(os_GetSignalString) signal 256 is "Software abort";
+	(os_FindInPath) implemented.
+
+	* logger.c:
+	(minimal_init) `log_fd' is correctly assigned to the duplicated HANDLE;
+	(logger_init_ex) `swabort' is called instead of `abort';
+	(vwrite_log) `swabort' is called instead of `abort';
+	(swabort) terminates the process using `ExitProcess' with code
+	  0xC0000100.
+
+	* exec.c: copyright notice is updated;
+	(task_DisableCoreDump) implemented as do-nothing function, as Win32
+	  lacks coredumps;
+	(task_Start) `TSK_REWRITE', `TSK_WRITE' constants are used instead
+	  of `O_*' constants.
+
+2002-01-02  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c: copyright notice is updated
+
+	* logger.c:
+	(minimal_init) the logger's handle is now a duplicate of the standard
+	  error handle instead of the standard error handle itself, so the
+	  `logger_close' function now can safely close this handle.
+
+2001-12-26  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c:
+	(os_writell) a new function, which converts a long long number into
+	  a string in various formats;
+	(os_writeull) a new function, similar to the previous one, but for
+	  unsigned long long values.
+
+2001-12-24  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c:
+	(os_readll) if endptr parameter equals to (void*) 1, the string
+	  ending is not checked;
+	(os_readull) if endptr parameter equals to (void*) 1, the string
+	  ending is not checked.
+
+2001-12-08  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c:
+	(NOT_IMPLEMENTED) new macro to mark not implemented stuff;
+	(os_rDirName) new function (not implemented).
+
+	* exec.c: (NOT_IMPLEMENTED) new macro to mark not implemented stuff;
+	(task_PutEnv) new function (not implemented);
+	(task_ClearEnv) new function (not implemented);
+	(task_DisableCoreDump) new function (not implemented);
+	(task_SetDataSize) new function (not implemented);
+	(task_SetStackSize) new function (not implemented);
+	(task_SetVMSize) new function (not implemented);
+	(task_SetKillSignal) new function (not implemented).
+
+2001-06-16  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c:
+	1) added own definition of constants LONG_LONG_MAX, LONG_LONG_MIN,
+	   ULONG_LONG_MAX, this constants are not exported out of the
+	   module, though;
+	2) added implementation of reuse_strtoll, reuse_strtoull, which
+	   are own implementations of strtoll, strtoull for the platforms
+	   that lack those functions.
+	3) implemeneted os_readll, os_readull, which are more
+	   platform-independent versions of strtoll, strtoull
+	   (they report error in their return value, accept pointer to
+	   the result as void* for the best portability).
+
+2001-03-25  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c, logger.c, fileutl.c, exec.c: copyright notice updated
+
+2000-11-03  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c 1.7, logger.c 1.12, osdeps.c 1.16: copyright notice updated
+
+2000-10-20  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c 1.3: empty body for make_writable added.
+
+	* osdeps.c 1.15: 1) fixed bug in os_rGetBasename;
+	2) execution permission is not checked;
+
+2000-10-18  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.14: implemented os_rGetBasename, os_rGetWorkingDir,
+	os_IsAbsolutePath.
+
+	* fileutl.c 1.2:
+	reimplemented according to the changes in the interface
+
+	* exec.c 1.6: added stubs for task_SetMaxTime and task_IsTimeout.
+
+2000-10-03  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.13: 1) implemented os_Sleep;
+	2) fixes to compile not in REUSE environment.
+
+	* logger.c 1.11: fixes in logger_init_ex and logger_init routines.
+
+2000-10-01  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.12:
+	1) REUSE fancy stuff ("lconfig.h", "reuse/..." includes)
+	is used only if __REUSE__ symbol defined;
+	2) minor compilation fixes.
+
+	* logger.c 1.10:
+	1) REUSE fancy stuff ("lconfig.h", "reuse/..." includes)
+	is used only if __REUSE__ symbol defined;
+	2) implemented logger_init_ex;
+	3) implemented support for primary and secondary
+	log streams; secondary log stream is currently written
+	to stderr.
+
+	* exec.c 1.5: 1) REUSE fancy stuff ("lconfig.h", "reuse/..." includes)
+	is used only if __REUSE__ symbol defined;
+	2) added support for changing the working directory
+	of the spawned process;
+	3) fixed TSR_DUP redirection to work properly;
+	4) standard handles of the new process are closed
+	when the process is started (handles leek).
+
+	* fileutl.c 1.1: initial revision
+
+2000-07-28  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.11: minor change to compile smoothly with MSVC.
+
+1999-10-26  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c 1.9: minimal logging priorities changed.
+
+1999-08-30  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c 1.8, osdeps.c 1.10, exec.c 1.4:
+	1) reuse_version.h is included using CONF_DEPFILE;
+	2) CVSID macro is no longer used, plain constant definition is
+	put instead.
+
+1999-08-16  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c 1.3, logger.c 1.7, osdeps.c 1.9:
+	Copyright notice added to all files (GNU LGPL).
+
+1999-08-10  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.8 (os_GetBasename):
+	fixed bug when the program name was scanner for suffix
+	up to the FIRST '.' character in the name, so it was
+	basename(foo-0.1.2.exe) == foo-0
+	incorrectly.
+
+1999-08-08  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.7:
+	1) macro os_strcasecmp introduced: comparison of strings ingnoring case;
+	for Borland C this macro is set to stricmp, for other compilers: _stricmp.
+	2) os_strcasecmp is used instead of _stricmp.
+	3) fixed invalid parameters passed to reuse_snprintf.
+
+1999-08-05  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.6:
+	1) reuse_vsnprintf is used if _[v]snprintf implementation is not available
+	on the platform;
+	2) os_CheckAccess checks NOT_IMPLEMENTED error of GetBinaryType;
+	3) os_GuessProjectEnv handles 8.3 aliases of long DOS names correctly.
+
+1999-08-04  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c 1.6: Unitialized variable bfac is now properly initialized.
+
+1999-07-31  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c 1.5, osdeps.c 1.5: c-font-lock-extra-types set
+
+1999-07-30  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.4:
+	many remaining function implemented: os_GetErrorString, os_ErrorString,
+	os_GetSignalString, os_putenv, os_access, os_GetSuffix, os_GetSuffixPtr,
+	os_rGetSuffix, os_GetBasename, os_GetFilename, os_SubstSuffix,
+	os_DirName, os_NodeName, os_IsFile, os_tempnam, os_readint, os_readdouble,
+	os_GetWorkingDir, get_PRJ_..., os_GuessProjectEnv, os_CheckAccess,
+	os_snprintf, os_vsnprintf, os_AttachFILE.
+
+	* logger.c 1.4: 1) automatic minimal initialization upon the first use;
+	2) os_[v]snprintf used instead of _[v]snprintf;
+	3) explicit returns added to eliminate warnings of non-gcc compilers;
+
+	* exec.c 1.2: implemented.
+
+1999-07-25  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.3: minor corrections
+
+	* logger.c 1.3: Implemented.
+
+1999-07-24  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 1.2: Добавлена заглушка для os_CheckAccess.
+
+1999-07-22  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c 1.2: added stubs for most functions
+
+1999-07-21  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c 1.1, logger.c 1.1, osdeps.c 1.1: New file.
+
+END	
+	$Id: ChangeLog 7368 2013-02-13 05:05:52Z cher $

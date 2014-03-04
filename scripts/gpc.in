@@ -1,0 +1,37 @@
+#!/bin/sh
+# $Id: gpc.in 5608 2010-01-07 19:51:45Z cher $
+# Copyright (c) 2001-2010 Alexander Chernov <cher@ejudge.ru>
+
+# using EJUDGE_FLAGS we may pass additional flags
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/gpc.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  version="unknown"
+  GPCRUN="gpc"
+  GPCDIR=
+fi
+
+if [ x"${version}" = x ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${GPCDIR}" != x ]
+then
+    PATH="${GPCDIR}:${PATH}"
+fi
+
+[ x"${EJUDGE_FLAGS}" = x ] && EJUDGE_FLAGS="-O2"
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+exec "${GPCRUN}" ${EJUDGE_FLAGS} -static "$1" -o "$2"

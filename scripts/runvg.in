@@ -1,0 +1,24 @@
+#!/bin/bash
+# $Id: runvg.in 7046 2012-10-11 17:15:12Z cher $
+# Copyright (c) 2012 Alexander Chernov <cher@ejudge.ru>
+
+# A helper script to start programs under valgrind.
+# Usage: runvg file
+
+runfile="$1"
+shift
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/gcc-vg.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  VGRUN="valgrind"
+fi
+
+[ x"${EJUDGE_VG_FLAGS}" != x ] || EJUDGE_VG_FLAGS="--quiet --error-exitcode=1 --leak-check=full"
+
+exec valgrind ${EJUDGE_VG_FLAGS} "${runfile}" "$@"
+
