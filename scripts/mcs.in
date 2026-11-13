@@ -1,0 +1,40 @@
+#!/bin/sh
+# $Id: mcs.in 5550 2009-02-19 18:14:43Z cher $
+# Copyright (c) 2005-2008 Alexander Chernov <cher@ejudge.ru>
+
+# A script for compilation of C# programs using the mono compiler.
+# Usage: mcs in-file out-file
+
+# using EJUDGE_FLAGS we may pass additional flags
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/mcs.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  version="unknown"
+  MCSRUN="gmcs"
+  MCSDIR=""
+fi
+
+if [ x"${version}" = x ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${MCSDIR}" != x ]
+then
+  PATH="${MCSDIR}/bin:${PATH}"
+fi
+
+[[ "${EJUDGE_FLAGS}" = "" ]] && EJUDGE_FLAGS="-optimize+"
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+exec "${MCSRUN}" ${EJUDGE_FLAGS} "$1" -out:"$2"

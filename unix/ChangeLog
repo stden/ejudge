@@ -1,0 +1,910 @@
+2013-01-31 (r7329) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(gzip_copy_file) a bug is fixed.
+
+2013-01-27 (r7315) Alexander Chernov  <cher@ejudge.ru>
+
+	* curtime.c: copyright notice is updated;
+	<stdlib.h> is included;
+	(get_current_time_ms) new function.
+
+2013-01-26 (r7303) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c: copyright notice is updated;
+	a fix around strange value of ru_stime field of wait4 is added.
+
+2012-12-09 (r7223) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	(ejudge_timed_write) 'log' parameter is added;
+	(ejudge_timed_fdgets) 'log' parameter is added.
+
+2012-12-08 (r7217) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	(ejudge_timed_write) new function;
+	(ejudge_timed_fdgets) new function.
+
+2012-12-05 (r7203) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(get_file_list) the list of files is sorted.
+
+	* reuse_exec.c:
+	(task_Wait) redirect to 'task_NewWait'.
+
+2012-12-05 (r7200) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(get_file_list) new function.
+
+2012-12-04 (r7192) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_NewWait) polling intervals are improved.
+
+2012-11-18 (r7178) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_TryProcessGroup) new function;
+	(task_KillProcessGroup) new function.
+
+2012-10-20 (r7069) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(struct tTask) field 'was_real_timeout' is added;
+	(task_Wait) 'was_real_timeout' field is used;
+	(task_NewWait) 'was_real_timeout' field is used;
+	(task_IsTimeout) 'was_real_timeout' field is used;
+	(task_IsRealTimeout) new function.
+
+2012-10-17 (r7053) Alexander Chernov  <cher@ejudge.ru>
+
+	* cpu.c: copyright noticei is updated;
+	"reuse_xalloc.h" is included;
+	(cpu_get_performance_info) new function.
+
+2012-08-13 (r6983) Alexander Chernov  <cher@ejudge.ru>
+
+	* startstop.c:
+	(start_open_log) new function.
+
+2012-06-28 (r6925) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	gcc compilation fixes.
+
+2012-06-18 (r6894) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	<limits.h> is included;
+	(struct tTask) 'used_vm_size' field is added;
+	(task_Start) milliseconds time limit to seconds time limit conversion
+	  is fixed;
+	(struct process_info) new structure to store the information from
+	  "/proc/PID/stat";
+	(parse_proc_pid_stat) new function;
+	(task_NewWait) new function, new implementation of task_Wait, based
+	  on regular polling the process state from /proc/PID/stat;
+	(task_GetMemoryUsed) returns the value of 'used_vm_size' field;
+	(linux_set_fix_flag) updated for linux kernel >= 3.0.0.
+
+2012-06-06 (r6878) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	<dirent.h> is included;
+	(ejudge_start_daemon_process) new function.
+
+2012-04-23 (r6760) Alexander Chernov  <cher@ejudge.ru>
+
+	* pollfds.c:
+	(pollfds_free) a free bug is fixed.
+
+2012-04-18 (r6751) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c: copyright notice is updated;
+	zip archives is supported for the files with ".zip" suffixes;
+	(full_archive_find_file) 'p_size' param is removed;
+	  'p_data' now is used to return the unpacked data.
+
+2012-04-17 (r6747) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_IgnoreSIGPIPE) new function.
+
+2012-03-28 (r6681) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	(ejudge_invoke_process) 'stdin_file' parameter is added.
+
+2012-03-27 (r6676) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	<sys/utsname.h> is included;
+	(ejudge_get_host_names) new function is implemented.
+
+	* startstop.c:
+	"reuse_xalloc.h" is included;
+	(start_find_all_processes) new function is implemented.
+
+2012-03-23 (r6672) Alexander Chernov  <cher@ejudge.ru>
+
+	* startstop.c: copyright notice is updated;
+	(start_daemon) new function.
+
+2012-03-19 (r6658) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_SetEnv) new function;
+	(task_FormatEnv) new function;
+	(print_as_shell_redir) fixed;
+	(task_PrintArgs) args are printed always.
+
+2012-01-11 (r6618) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c: copyright notice is updated;
+	(task_SetMaxRealTimeMillis) new function is added.
+
+2012-01-01 (r6605) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c: copyright notice is updated;
+	"pollfds.h" is included;
+	"reuse_logger.h" is included;
+	<poll.h> is included;
+	(handle_stdin) new function;
+	(handle_stdout) new function;
+	(handle_stderr) new function;
+	(background_process_append_pollfd) new function;
+	(background_process_close_fds) new function.
+
+	* pollfds.c: initial revision.
+
+2011-12-28 (r6599) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	(ejudge_start_process) file descriptor handling is improved.
+
+2011-12-17 (r6567) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	framework for background processes. is implemented.
+
+2011-10-24 (r6494) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(find_prc_in_list) time-limit error detection is improved;
+	(task_Start) time-limit error detection is improved.
+
+2011-09-07 (r6418) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_makedirpath.c:
+	(os_MakeDirPath2) new function is added.
+
+2011-06-18 (r6367) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(linux_set_secure_exec_supported_flag) check for 'dup' is removed.
+
+2011-03-31 (r6208) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_Start) core files disable code moved.
+
+2011-03-30 (r6206) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(struct tTask) new fields 'max_core_size', 'max_file_size',
+	'max_locked_mem_size', 'max_msg_queue_size', 'max_nice_value',
+	'max_open_file_count', 'max_process_count', 'max_prio_value',
+	'max_pending_count' are added;
+	(task_SetMaxProcCount) removed;
+	(task_SetMaxCoreSize) new function;
+	(task_SetMaxFileSize) new function;
+	(task_SetMaxLockedMemorySize) new function;
+	(task_SetMaxMessageQueueSize) new function;
+	(task_SetMaxNiceValue) new function;
+	(task_SetMaxOpenFileCount) new function;
+	(task_SetMaxProcessCount) new function;
+	(task_SetMaxPrioValue) new function;
+	(task_SetMaxPendingCount) new function;
+	(set_limit) new static function;
+	(task_Start) new rlimit settings are supported.
+
+2011-03-27 (r6193) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	(task_EnableProcessGroup) new function;
+	(task_Start) a new process group is created if the corresponding
+	mode is activated;
+	(task_Wait) the whole process group is killed if the process
+	group mode is activated.
+
+2011-03-27 (r6183) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_exec.c:
+	Initial revision. Copied from the reuse library.
+
+2011-03-27 (r6166) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_findinpath.c, reuse_substsuffix.c, reuse_rgetsuffix.c, reuse_rgetlastname.c, reuse_nodename.c, reuse_isabsolutepath.c, reuse_makedirpath.c, reuse_rgetbasename.c, reuse_checkaccess.c, reuse_errormsg.c, reuse_rdirname.c, reuse_rgetworkingdir.c, reuse_tempnam.c, reuse_getlastname.c, reuse_attachfile.c, reuse_setlock.c, reuse_getsignalstring.c, reuse_getsuffix.c, reuse_sleep.c, reuse_getbasename.c, reuse_isfile.c, reuse_normalize_path.c, reuse_makedir.c, reuse_getworkingdir.c, reuse_dirname.c, reuse_geterrorstring.c, reuse_errorstring.c:
+	Initial revision. Copied from the reuse library.
+
+2011-03-27 (r6161) Alexander Chernov  <cher@ejudge.ru>
+
+	* sock_op_get_fds.c, cr_serialize.c, sock_op_get_creds.c, sock_op_enable_creds.c, startstop.c, file_perms.c, sock_op_put_creds.c:
+	copyright notice is updated;
+	"reuse_osdeps.h" is included instead of <reuse/osdeps.h>.
+
+2011-03-27 (r6160) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c, fileutl.c:
+	"reuse_osdeps.h" is included instead of <reuse/osdeps.h>.
+
+2011-03-26 (r6150) Alexander Chernov  <cher@ejudge.ru>
+
+	* reuse_logger.c:
+	Initial revision. Copied from the reuse library.
+
+2011-03-26 (r6145) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c, timestamp.c, fileutl.c:
+	"reuse_logger.h" is used instead of <reuse/logger.h>.
+
+2011-03-26 (r6134) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c, full_archive.c, timestamp.c, fileutl.c:
+	copyright notice is updated;
+	"reuse_xalloc.h" is included instead of <reuse/xalloc.h>.
+
+2010-10-05 (r6002) Alexander Chernov  <cher@ejudge.ru>
+
+	* file_perms.c: copyright notice is updated;
+	(file_perms_set) new parameters 'old_group', 'old_mode' are added;
+	(file_perms_get) new function.
+
+2010-06-24 (r5906) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(scan_executable_files) bugs are fixed.
+
+2010-06-18 (r5900) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(write_tmp_file) new function.
+
+2010-06-18 (r5896) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(scan_executable_files) new function.
+
+2010-06-12 (r5877) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c: copyright notice is updated;
+	<errno.h> is included;
+	<stdarg.h> is included;
+	(error) new static function;
+	(fferror) new static function;
+	(ejudge_invoke_process) new function.
+
+2010-01-25 (r5730) Alexander Chernov  <cher@ejudge.ru>
+
+	* startstop.c: copyright notice is updated;
+	(start_find_process) uninitialized value bug is fixed.
+
+2010-01-20 (r5698) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(make_hardlink) linking completely disabled.
+
+2010-01-18 (r5673) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(get_tmp_dir) new function.
+
+2010-01-17 (r5662) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(make_hardlink) new function is added.
+
+2010-01-12 (r5639) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(remove_directory_recursively) `preserve_root' flag is added;
+	(fast_copy_file) new function;
+	(generic_truncate) new function.
+
+2009-05-02 (r5562) Alexander Chernov  <cher@ejudge.ru>
+
+	* file_perms.c:
+	initial revision
+
+2009-03-24 (r5554) Alexander Chernov  <cher@ejudge.ru>
+
+	* sock_op_enable_creds.c, sock_op_put_creds.c:
+	  copyright notice is updated;
+	  python module support is added.
+
+2009-01-28 (r5547) Alexander Chernov  <cher@ejudge.ru>
+
+	* fmemopen.c, open_memstream.c: copyright notice is added.
+	file-based implementation of missing functions is added.
+
+2008-12-31 (r5537) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_process.c:
+	`close_memstream' is used to close memory streams
+	opened with `open_memstream'.
+	
+
+	* fmemopen.c:
+	(fmemclose) new function is added.
+
+	* open_memstream.c:
+	(close_memstream) new function is added.
+
+2008-12-26 (r5497) Alexander Chernov  <cher@ejudge.ru>
+
+	* fmemopen.c:
+	initial revision
+
+2008-12-26 (r5478) Alexander Chernov  <cher@ejudge.ru>
+
+	* full_archive.c: copyright notice is updated;
+	(full_archive_append_file) `lseek64' is replaced with 'lseek'.
+
+	* open_memstream.c: initial revision.
+
+2008-12-25 (r5463) Alexander Chernov  <cher@ejudge.ru>
+
+	* sock_op_get_fds.c, sock_op_get_creds.c, sock_op_put_fds.c, sock_op_enable_creds.c, sock_op_put_creds.c:
+	initial revision
+
+2008-12-18 (r5433) Alexander Chernov  <cher@ejudge.ru>
+
+	* startstop.c: copyright notice is updated;
+	<dirent.h>, <errno.h>, <string.h> are included;
+	(start_find_process) new function;
+	(start_kill) new function.
+
+2008-12-02 (r5383) Alexander Chernov  <cher@ejudge.ru>
+
+	* interrupt.c: copyright notice is updated;
+	(interrupt_flag_interrupt) new function;
+	(interrupt_flag_sighup) new function.
+
+2008-11-15 (r5298) Alexander Chernov  <cher@ejudge.ru>
+
+	* startstop.c: moved here from the top directory.
+
+2008-09-29 (r5120) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c:
+	(scan_dir) the lexicographically least file name is picked up
+	  instead of the first.
+
+2008-03-05 (r4744) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c: copyright notice is updated;
+	directory creation permissions are relaxed: group write is
+	enabled.
+
+2007-08-04 (r4271) Alexander Chernov  <cher@ejudge.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(scan_dir) `fi_size' parameter is added to allow specifying
+	  the buffer size.
+
+2006-10-05 (r3489) Alexander Chernov  <cher@ejudge.ru>
+
+	* interrupt.c: copyright notice is updated;
+	SIGHUP signal is handled separately, and information about
+	  whether it was received is available to the application;
+	(sighup_handler) function to handle SIGHUP;
+	(interrupt_restart_requested) function which returns 1, if SIGHUP
+	  was received.
+
+2006-09-09 (r3337) Alexander Chernov  <cher@ejudge.ru>
+
+	* cr_serialize.c:
+	"serve_state.h" is included;
+	(cr_serialize_init) `state' parameter is added;
+	(cr_serialize_lock) `state' parameter is added;
+	(cr_serialize_unlock) `state' parameter is added.
+
+2006-09-08 (r3328) Alexander Chernov  <cher@ejudge.ru>
+
+	* cr_serialize.c: copyright notice is updated;
+	"prepare_vars.h" is no longer included;
+	"serve_state.h" is included;
+	`serve_state.global' is used instead of `global'.
+
+2006-06-10 (r3156) Alexander Chernov  <cher@ispras.ru>
+
+	* ChangeLog:
+	Transition from CVS to SVN.
+
+2006-02-25  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c:
+	copyright notice is updated;
+	(scan_dir_add_ignored) new function to add a file name to the list
+	  of ignored files;
+	(scan_dir) the list of ignored files is supported.
+
+2005-11-25  Alexander Chernov  <cher@ispras.ru>
+
+	* full_archive.c: "errlog.h" is included.
+
+2005-11-25  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: "errlog.h" is included.
+
+	* cr_serialize.c: "pathutl.h" is replaced with "errlog.h".
+
+2005-11-13  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c:
+	(generic_write_file) the output file is not removed on error,
+	  if `KEEP_ON_FAIL' flag is set.
+
+2005-11-02  Alexander Chernov  <cher@ispras.ru>
+
+	* cpu.c:
+	(cpu_get_bogomips) "use of uninitialized value" warning is fixed.
+
+	* ej_process.c:
+	(read_process_output) "missing sentinel point" warning is fixed.
+
+2005-09-12  Alexander Chernov  <cher@ispras.ru>
+
+	* cpu.c: initial revision
+
+2005-08-19  Alexander Chernov  <cher@ispras.ru>
+
+	* ej_process.c: initial revision
+
+2005-07-03  Alexander Chernov  <cher@ispras.ru>
+
+	* cr_serialize.c: copyright notice is updated;
+	"prepare_vars.h" is included.
+
+2005-06-15  Alexander Chernov  <cher@ispras.ru>
+
+	* timestamp.c: initial revision
+
+2005-04-13  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c:
+	(make_dir) message about creation of a new dir is not printed, if this
+	  directory already exists.
+
+2005-03-03  Alexander Chernov  <cher@ispras.ru>
+
+	* curtime.c: initial revision
+
+2005-01-15  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(split_path) function moved here from prepare.c;
+	(make_relative_path) function moved here from prepare.c;
+	(make_symlink) function moved here from prepare.c.
+
+2004-12-31  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: (generic_file_size) bug in snprintf usage fixed.
+
+	* fileutl.c:
+	(generic_file_size) return type is now `ssize_t', NULL `dir' param
+	  is handled slightly differently.
+
+2004-11-13  Alexander Chernov  <cher@ispras.ru>
+
+	* interrupt.c: initial revision
+
+	* cr_serialize.c: compile-command is updated.
+
+2004-06-20  Alexander Chernov  <cher@ispras.ru>
+
+	* cr_serialize.c:
+	The `koi8-r' charset specification is removed from the file header.
+
+2004-05-04  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c:
+	(gzip_read_file) possibly uninitialized variable use warning is fixed.
+
+2004-04-19  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: 
+	(scan_dir) a bug introduced in the previous revision is fixed.
+
+2004-04-17  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: "settings.h" is included;
+	(scan_dir) all the entries in the given directory are sorted in
+	  the priority order, and an entry with the maximal priority
+	  is returned.
+
+2004-01-09  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(clear_directory) better error handling is implemented;
+	  all the filenames in the directory being cleared first are
+	  saved in the list, and then the names from the list are unlinked;
+	(make_dir) better error handling is implemented;
+	  umask manipulations is now used to set up permissions on the new
+	  directory without race conditions;
+	(make_all_dir) the error code returned from `make_dir' is returned
+	  further from this function;
+	(scan_dir) better error handling and recovery is implemented;
+	(do_write_file) the same as above;
+	(gzip_write_file) the same as above;
+	(generic_write_file) the same as above;
+	(do_read_file) rewritten from scratch to handle reading of the file's
+	  contents into the fixed-size and the extendable buffers;
+	(do_fixed_pipe_read_file) removed;
+	(do_alloc_pipe_read_file) removed;
+	(gzip_read_file) better error handling and recovery is implemented;
+	(generic_read_file) better error handling and recovery is implemented;
+	  `do_fixed_pipe_read_file' and `do_alloc_pipe_read_file' are
+	  no longer used, the `do_read_file' is used instead;
+	(dumb_copy_file_to_dos) better error handling and recovery is
+	  implemented;
+	(dumb_copy_file_from_dos) the same as above;
+	(dumb_copy_file) the same as above;
+	(gzip_copy_file) the same as above;
+	(do_copy_file) the same as above;
+	(generic_copy_file) the same as above;
+	(sf_read) the `errno' variable's value is restored correctly to the
+	  error code before exit from the function;
+	(sf_open) the same as above.
+
+2003-12-01  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: <zlib.h> is included;
+	(gzip_write_file) a new function to write a gzipped file from memory;
+	(generic_write_file) `GZIP' flag (file compression) is handled;
+	(gzip_read_file) a new function to read from a gzipped file to memory;
+	(generic_read_file) `GZIP' flag (file compression) is handled;
+	(gzip_copy_file) a new function to copy files, decompressing/compressing
+	  them if needed. Also unix<->dos text conversion is performed,
+	  if `CONVERT' flag is specified;
+	(do_copy_file) `GZIP' flag is handled and `gzip_copy_file' is called;
+	(generic_file_size) a new function to return the size of the file.
+
+2003-10-12  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c:
+	(clear_directory) the new `remove_directory_recursively' function is
+	  called for directories. So the `clear_directory' function now
+	  correctly removes all the directory's content;
+	(dumb_copy_file_to_dos) bug: need to read the next character in loop;
+	(dumb_copy_file) bug: `|' was used instead of '&';
+	(do_remove_recursively) a new helper function to traverse the
+	  filesystem tree and remove all the files;
+	(free_file_hierarchy) a new helper function to deallocate filesystem
+	  tree;
+	(remove_directory_recursively) new function to remove the given
+	  directory with all its content.
+
+2003-01-06  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: copyright notice is updated;
+	(make_dir) no message is printed, if the directory already
+	  exists.
+
+2002-12-08  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: "unix_fileutl.h" include directive is changed.
+
+2002-03-22  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c: copyright notice is updated;
+	`logger.h', `osdeps.h', `xalloc.h' are included from reuse library.
+
+2002-01-08  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c: copyright notice is updated;
+	(os_readint) moved to `reuse/number_io';
+	(os_readdouble) moved to `reuse/number_io';
+	(reuse_strtoll) moved to `reuse/number_io';
+	(reuse_strtoull) moved to `reuse/number_io';
+	(os_readll) moved to `reuse/number_io';
+	(os_readull) moved to `reuse/number_io';
+	(os_writell) moved to `reuse/number_io';
+	(os_writeull) moved to `reuse/number_io';
+	(os_snprintf) moved to `reuse/number_io';
+	(os_vsnprintf) moved to `reuse/number_io'.
+
+	* exec.c, logger.c: copyright notice is updated;
+	new "number_io.h" file is included.
+
+2001-12-26  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c:
+	(os_writell) a new function, which converts a long long number into
+	  a string in various formats;
+	(os_writeull) a new function, similar to the previous one, but for
+	  unsigned long long values.
+
+2001-12-24  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c:
+	(os_readll) if endptr parameter equals to (void*) 1, the string
+	  ending is not checked;
+	(os_readull) if endptr parameter equals to (void*) 1, the string
+	  ending is not checked.
+
+2001-12-03  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c: 
+	(struct tTask) new fields clear_env, env;
+	(task_Delete) memory, allocated for the new fields are correctly
+	  removed;
+	(task_PutEnv) new function: adds an environment variable for the
+	  process to start;
+	(task_ClearEnv) new function: sets `clear_env' flag, which indicates
+	  that all the environment must be cleared;
+	(task_Start) the environment is cleared, if `clear_env' flag is set,
+	  environment variables are set.
+
+2001-11-08  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c:
+	(struct tTask) new fields: termsig, max_stack_size, max_data_size,
+	  max_vm_size, disable_core;
+	(task_New) termsig is SIGTERM by default;
+	(task_DisableCoreDump) a new function, which disables core dumps of
+	  the child process;
+	(task_SetDataSize) a new function, which allows setting maximum
+	  data segment size of the process (does not work on Linux by unknown
+	  reason);
+	(task_SetStackSize) a new function, which allows setting maximum
+	  stack segment size;
+	(task_SetVMSize) a new function, which allows setting the overall
+	  maximum virtual memory size of the process;
+	(task_SetKillSignal) a new function, which allows setting the
+	  signal, which is used to kill the process due to timeout;
+	(task_Start) added support for all the new features described above.
+
+2001-11-07  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c:
+	(task_Wait) the waiting time must be updated if nanosleep returned
+	  due to signal arrived.
+
+2001-06-23  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c:
+	Include of <string.h> added to eliminate compiler (gcc 3.0)
+	warnings.
+
+2001-06-16  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c:
+	1) added own definition of constants LONG_LONG_MAX, LONG_LONG_MIN,
+	   ULONG_LONG_MAX, this constants are not exported out of the
+	   module, though;
+	2) added implementation of reuse_strtoll, reuse_strtoull, which
+	   are own implementations of strtoll, strtoull for the platforms
+	   that lack those functions.
+	3) implemeneted os_readll, os_readull, which are more
+	   platform-independent versions of strtoll, strtoull
+	   (they report error in their return value, accept pointer to
+	   the result as void* for the best portability).
+
+2001-03-25  Alexander Chernov  <cher@ispras.ru>
+
+	* unix_fileutl.h, osdeps.c, logger.c, fileutl.c, exec.c:
+	copyright notice updated
+
+2000-11-03  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c 1.8: 1) error reporting is changed:
+	   write_log(0, LOG_ERR... -> err(...;
+	2) implemented check_readable_dir;
+	3) implemented check_writable_dir;
+	4) implemented check_writable_spool;
+	5) implemented check_executable;
+	6) implemented relaxed_remove;
+	7) implemented syscall wrappers:
+	   sf_read, sf_write, sf_open, sf_close, sf_lseek, sf_chmod,
+	   sf_mkfifo.
+
+	* osdeps.c 6.19: 1) copyright notice updated;
+	2) os_ErrorMsg implemeted;
+	3) char * -> const char * for many functions;
+	4) some function documentation added.
+
+	* logger.c 6.9: 1) copyright header updated;
+	2) char* -> const char* in arguments of write_log, vwrite_log.
+
+	* exec.c 6.13: 1) copyright header updated;
+	2) resource utilization field added to Task struct;
+	3) wait4 syscall is used instead of waitpid;
+	4) resource utilization is stored upon termination;
+	5) added some documenting comments to the new functions;
+	6) reworked process startup error reporting using aux. pipe;
+	7) _exit is used instead of exit in child;
+	8) implemented task_GetRunningTime;
+	9) implemented task_ErrorCode.
+
+	* unix_fileutl.h 1.1: New file.
+
+2000-10-25  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c 6.12: added explicit flag 'is_timeout' which is set upon
+	timeout.
+
+2000-10-20  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c 1.7: make_writable function added
+
+	* exec.c 6.11: 1) task is killed with SIGTERM in case of timeout;
+	2) if task is interrupted with SIGTERM, SIGKILL, or
+	returned code 15, timeout is reported;
+	3) stub for task_Kill added.
+
+2000-10-18  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.18: fixed parameter types of os_rGetBasename.
+
+2000-10-17  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c 1.6: fixed bug in generic_copy_file
+
+	* exec.c 6.10: run-time limit implemented with nanosleep instead of
+	setting limit of CPU time
+
+	* osdeps.c 6.17: added implementation of os_rDirName
+
+	* fileutl.c 1.5: added permission bits to make_dir, make_all_dirs
+
+	* exec.c 6.9: 1) added support for time-limited program execution:
+	task_SetMaxTime, task_IsTimeout.
+	2) added support for platform-independent open flags
+	added to exec.h earlier.
+
+2000-10-11  Alexander Chernov  <cher@ispras.ru>
+
+	* fileutl.c 1.4: added flag PIPE for generic_read_file
+	to read files correctly from pipes;
+	implemented mostly, but pipe read with fixed buffer
+	throws "not implemented" error yet
+
+2000-10-10  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c 6.8: added global logging level and function
+	logger_set_level.
+
+	* fileutl.c 1.3: rewrited: instead of lots functions only
+	3 is introduced: generic_read_file, generic_write_file,
+	generic_copy_file.
+
+	* osdeps.c 6.16: 1) os_GetBasename_r renamed to os_rGetBasename;
+	2) implemented os_rGetWorkingDir and os_IsAbsolutePath.
+
+2000-10-07  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.15: os_GetBasename_r implemented
+
+	* fileutl.c 1.2: additions
+
+2000-10-01  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.14: minor fix
+
+	* logger.c 6.7:
+	1) REUSE fancy stuff ("lconfig.h", "reuse/..." includes)
+	is used only if __REUSE__ symbol defined;
+	2) implemented logger_init_ex;
+	3) implemented support for primary and secondary
+	log streams; secondary log stream is currently written
+	to stderr.
+
+	* osdeps.c 6.13:
+	1) REUSE fancy stuff ("lconfig.h", "reuse/..." includes)
+	is used only if __REUSE__ symbol defined;
+	2) added function os_Sleep.
+
+	* exec.c 6.8: 1) REUSE fancy stuff ("lconfig.h", "reuse/..." includes)
+	is used only if __REUSE__ symbol defined;
+	2) added support for changind the working directory
+	in the spawned program;
+	3) fixed bug in DUP redirection.
+
+	* fileutl.c 1.1: initial revision
+
+2000-07-01  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.12: correction to work on the latest cygwin release
+
+1999-08-30  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.11:
+	1) reuse_version.h is included using CONF_DEPFILE instead of CONF_GENFILE;
+	2) CVSID macro is no longer used, plain constant definition is
+	put instead.
+
+	* logger.c 6.6:
+	1) reuse_version.h is included using CONF_DEPFILE instead of CONF_GENFILE;
+	2) all module variables are properly initialized upon the first
+	invocation of the functions from this module, so call to
+	logger_init is no longer necessary, unless the list of modules
+	is defined;
+	3) removed some unused and uncompiled code (in write_log);
+	4) commented out fd_vprintf etc. stuff --- candidate for removal;
+	5) added emacs-specific fontification options.
+
+	* exec.c 6.7:
+	1) reuse_version.h is included using CONF_DEPFILE instead of CONF_GENFILE;
+	2) CVSID macro is no longer used, plain constant definition is
+	put instead;
+	3) added emacs-specific fontification options.
+
+1999-08-16  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c 6.6, logger.c 6.5, osdeps.c 6.10:
+	Copyright notice added (GNU LGPL).
+
+1999-08-04  Alexander Chernov  <cher@ispras.ru>
+
+	* logger.c 6.4: os_vsnprintf is used instead of snprintf.
+
+	* osdeps.c 6.9:
+	New implementation of [v]snprintf (taken from DJGPP) is used
+	when neither vsnprintf, nor _[v]snprintf present.
+
+1999-07-30  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.8:
+	1) os_GuessProjectEnv enhanced to support win32 feature:
+	if the program is found in PATH list, argv[0] does not contain
+	the path to the executable, only its basename;
+	2) os_AttachFILE implemented;
+
+1999-07-24  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.7: 1) os_CheckAccess: implemented;
+	2) os_GuessProjectEnv: feature test CONF_HAS_FCHDIR is used instead
+	of __CYGWIN32__.
+
+	* exec.c 6.5, logger.c 6.3, osdeps.c 6.6:
+	Moved from reuse to reuse/unix directory.
+
+1999-06-12  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.5: Fixes to compile on cygwin (B20.1).
+
+1999-06-02  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.4: added functions get_PRJ_HOME_name, get_PRJ_HOME,
+	get_PRJ_CONFIG_name, get_PRJ_CONFIG
+
+1999-06-01  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c 6.4: 1) compilation warnings fixed.
+
+1999-05-31  Alexander Chernov  <cher@ispras.ru>
+
+	* exec.c 6.3: changes in logging usage
+
+	* logger.c 6.2, osdeps.c 6.3: copyright notice updated;
+	merged with the UniCad's version of the file.
+
+	* exec.c 6.2: Copyright notice updated
+
+1999-05-30  Alexander Chernov  <cher@ispras.ru>
+
+	* osdeps.c 6.2: tabulation converted to spaces
+
+	* exec.c 6.1, logger.c 6.1, osdeps.c 6.1:
+	Адаптация к новому окружению компиляции.
+
+	* exec.c 6.0, logger.c 6.0, osdeps.c 6.0: New file.
+
+END
+
+	$Id: ChangeLog 7368 2013-02-13 05:05:52Z cher $
+

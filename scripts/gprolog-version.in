@@ -1,0 +1,105 @@
+#!/bin/sh
+# $Id: gprolog-version.in 7005 2012-08-28 09:13:19Z cher $
+# Copyright (c) 2005-2012 Alexander Chernov <cher@ejudge.ru>
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+
+common_config() {
+  echo 'long_name="GNU Prolog"'
+  echo 'src_sfx=".pro"'
+  echo 'arch="linux-shared"'
+}
+
+failure() {
+  rm -f conftest*
+  echo 'version='
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'GPLCRUN=false'
+  echo 'GPROLOGDIR='
+  [ "${verbose}" = 1 ] && echo "no" >&2
+  exit 1
+}
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+if [ x"$1" = x-v ]
+then
+  verbose=1
+  shift
+fi
+
+# recheck the language
+if [ x"$1" = x-r ]
+then
+  arg="$2"
+  [ x"$2" != x ] && GPLCRUN="$2"
+  [ "${GPLCRUN}" = "" ] && GPLCRUN="gplc"
+
+  [ "${verbose}" = 1 ] && echo -n "checking whether GNU Prolog is available..." >&2
+  "${GPLCRUN}" --version >/dev/null 2>&1 || failure
+  version=`"${GPLCRUN}" --version 2>&1 | grep "Prolog compiler" | gawk '{ print $5; }'` || failure
+  [ "${version}" != "" ] || failure
+  cat > conftest.pro <<EOF
+:-initialization(main).
+main :- write('OK'), halt.
+EOF
+  "${GPLCRUN}" conftest.pro -o conftest >/dev/null 2>&1 || failure
+  [ -x conftest ] || failure
+  ./conftest >/dev/null 2>&1 || failure
+
+  rm -f ./conftest*
+  GPROLOGDIR=`dirname "${GPLCRUN}"`
+  [ "${GPROLOGDIR}" = . ] && GPROLOGDIR=""
+  echo 'version="'"${version}"'"'
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'GPLCRUN="'"${GPLCRUN}"'"'
+  echo 'GPROLOGDIR="'"${GPROLOGDIR}"'"'
+  [ "${verbose}" = 1 ] && echo "yes, ${GPLCRUN}, ${version}" >&2
+  exit 0
+fi
+
+if [ x"$1" = x-l ]
+then
+  echo "GNU Prolog compiler [http://www.gprolog.org]"
+  exit 0
+fi
+
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/gprolog.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  GPLCRUN="gplc"
+  GPROLOGDIR=""
+fi
+
+if [ x"${GPLCRUN}" = x -o x"${GPLCRUN}" = xfalse ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${GPROLOGDIR}" != x ]
+then
+    PATH="${GPROLOGDIR}:${PATH}"
+fi
+
+if [ x"$1" = x-p ]
+then
+    echo "${GPLCRUN}"
+    exit 0
+fi
+    
+"${GPLCRUN}" --version 2>/dev/null >/dev/null || exit 1
+
+[ x"$1" = x-f ] && echo -n "GNU Prolog "
+
+"${GPLCRUN}" --version 2>&1 | grep "Prolog compiler" | gawk '{ print $5; }'
+[ $? != 0 -a $? != 1 ] && exit 1
+exit 0

@@ -1,0 +1,27 @@
+#!/bin/bash
+# $Id: runmono.in 5550 2009-02-19 18:14:43Z cher $
+# Copyright (c) 2005-2008 Alexander Chernov <cher@ejudge.ru>
+
+# A helper script to start C# programs using the mono runtime.
+# Usage: runmono file
+
+# EJUDGE_MONO_FLAGS may be used to pass additional flags
+# security policy is not yet supported (mono does not support it)
+
+runfile="$1"
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/mcs.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  MONORUN="mono"
+  MONODIR=""
+fi
+
+[ x"${MONODIR}" != x ] && PATH="${MONODIR}/bin:$PATH"
+
+exec "${MONORUN}" ${EJUDGE_MONO_FLAGS} "${runfile}"
+

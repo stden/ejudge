@@ -1,0 +1,263 @@
+2013-02-09 (r7356) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c, methods.inc.c, tables.inc.c:
+	support for IPv6 is in progress...
+
+2013-02-05 (r7339) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c, methods.inc.c:
+	copyright notice is updated;
+	ej_ip_t -> ej_ip4_t;
+	transition to IPv6 support is started.
+
+2012-05-04 (r6795) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c: copyright notice is updated;
+	(set_reg_flags_func) value == 0 is allowed for cmd == 4.
+
+2011-07-17 (r6408) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(prepare_func) 'const' added to 'config' parameter.
+
+	* uldb_mysql.c:
+	(prepare_func) 'const' added to 'config' parameter.
+
+2011-06-19 (r6376) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c:
+	(get_brief_list_iterator_2_func) performance is improved, group_id is supported.
+
+2011-05-14 (r6332) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c:
+	(set_reg_flags_func) copy operation (4) is supported.
+
+2011-05-08 (r6313) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(get_prev_user_id_func) new function prototype;
+	(get_next_user_id_func) new function prototype.
+
+	* uldb_mysql.c:
+	(get_prev_user_id_func) new function;
+	(get_next_user_id_func) new function.
+
+2011-05-01 (r6288) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c, uldb_mysql.c:
+	(new_user_func) many new parameters are added;
+	(register_contest_func) new parameter 'flags' is added.
+
+2011-04-22 (r6261) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(get_brief_list_iterator_2_func) 'group_id' parameter is added;
+	(get_group_iterator_2_func) new function prototype;
+	(get_group_count_func) new function prototope.
+
+	* uldb_mysql.c:
+	(get_member_serial_func) a bug is fixed;
+	(get_brief_list_iterator_2_func) 'group_id' parameter is added;
+	(get_group_iterator_2_func) new function;
+	(get_group_count_func) new function.
+
+2011-04-20 (r6253) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(get_user_count_func) new function prototype.
+
+	* uldb_mysql.c:
+	(get_user_count_func) new function.
+
+2011-04-19 (r6250) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c: copyright notice is updated;
+	(get_brief_list_iterator_2_func) function prototype is added.
+
+	* uldb_mysql.c:
+	(get_brief_list_iterator_2_func) new function is added.
+
+2011-03-27 (r6188) Alexander Chernov  <cher@ejudge.ru>
+
+	* main.make, Makefile.in:
+	reuse dependency is removed.
+
+2011-03-27 (r6153) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c:
+	"reuse_osdeps.h" is included instead of <reuse/osdeps.h>.
+
+2011-03-26 (r6142) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c:
+	"reuse_logger.h" is used instead of <reuse/logger.h>.
+
+2011-03-26 (r6127) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c:
+	copyright notice is updated;
+	"reuse_xalloc.h" is included instead of <reuse/xalloc.h>.
+
+2010-05-29 (r5813) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c, groupmembers.inc.c, tables.inc.c:
+	usergroup members implemented
+
+2010-05-28 (r5811) Alexander Chernov  <cher@ejudge.ru>
+
+	* create-userdb.sql:
+	description of groups and groupmembers tables is added.
+
+	* groups.inc.c:
+	group-related functions are implemented.
+
+	* methods.inc.c:
+	(create_group_func) `created_by' parameter is added.
+
+	* tables.inc.c: copyright notice is updated;
+	specification of groups table is added.
+
+	* uldb_mysql.c:
+	support for operations on usergroups is added.
+
+2010-05-28 (r5809) Alexander Chernov  <cher@ejudge.ru>
+
+	* groupmembers.inc.c, groups.inc.c:
+	initial revision
+
+2010-05-24 (r5806) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c, uldb_mysql.c, main.make, Makefile.in, create-userdb.sql, drop-userdb.sql:
+	stubs for usergroup-related functions are added
+
+2009-04-03 (r5557) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c: copyright notice is updated;
+	(copy_user_info_func) NULL pointer assertion fixed.
+
+2008-12-31 (r5534) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c, user_info.inc.c:
+	`close_memstream' is used to close the memory streams opened
+	with `open_memstream'.
+
+2008-11-12 (r5279) Alexander Chernov  <cher@ejudge.ru>
+
+	* cntsregs.inc.c, cookies.inc.c, logins.inc.c, members.inc.c, tables.inc.c, uldb_mysql.c, user_infos.inc.c:
+	`common_mysql' plugin is used.
+
+2008-11-10 (r5269) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c:
+	(struct uldb_mysql_state) `miface', `mdata' fields are added;
+	(prepare_func) `common_mysql' plugin is loaded.
+
+2008-11-10 (r5263) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(init_func) prototype is changed;
+	(finish_func) prototype is changed;
+	(prepare_func) prototype is changed.
+
+	* uldb_mysql.c:
+	(plugin_uldb_mysql) initialization structure is changed;
+	(init_func) prototype is changed;
+	(finish_func) prototype is changed;
+	(prepare_func) prototype is changed.
+
+2008-11-10 (r5259) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c:
+	(init_func) parameter is removed;
+	(finish_func) new function is added;
+	(prepare_func) `const' removed from `config' parameter.
+
+	* methods.inc.c:
+	(init_func) parameter is removed;
+	(finish_func) new function is added;
+	(prepare_func) `const' removed from `config' parameter.
+
+2008-10-30 (r5230) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(set_simple_reg_func) prototype is added.
+
+	* uldb_mysql.c:
+	(set_simple_reg_func) new function.
+
+2008-09-26 (r5105) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	try_new_login_func is added.
+
+	* uldb_mysql.c:
+	(my_fquery) new function;
+	(maintenance_func) implemented;
+	(convert_to_pattern) new function;
+	(try_new_login_func) new function.
+
+2008-09-04 (r5010) Alexander Chernov  <cher@ejudge.ru>
+
+	* ej_limits.h:
+	definition of EJ_MAX_GRADE added.
+
+	* userlist.h:
+	(userlist_members_reserve) new function prototype.
+
+	* userlist.c:
+	(userlist_members_reserve) new function.
+
+	* userlist-server.c:
+	(do_list_users) a minor memory leak is fixed.
+
+2007-07-28 (r4239) Alexander Chernov  <cher@ejudge.ru>
+
+	* empty.make: copyright year is updated;
+	(distclean) `Makefile' is removed.
+
+2006-11-17 (r3668) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: copyright notice is updated;
+	`empty.make' is included, if no mysql library is available.
+
+	* main.make: copyright notice is updated.
+
+	* empty.make: initial revision.
+
+2006-09-03 (r3283) Alexander Chernov  <cher@ejudge.ru>
+
+	* uldb_mysql.c: copyright notice is updated;
+	(parse_func) `data' parameter is moved to the first place
+	  in the parameter list.
+
+2006-08-26 (r3237) Alexander Chernov  <cher@ispras.ru>
+
+	* main.make: plugin target is renamed.
+
+	* mysql-create.sql: development changes.
+
+	* uldb_mysql.c: development is progress.
+
+2006-08-11 (r3231) Alexander Chernov  <cher@ispras.ru>
+
+	* mysql-drop.sql:
+	initial revision
+
+2006-08-03 (r3220) Alexander Chernov  <cher@ispras.ru>
+
+	* main.make:
+	(main.make) `clean' and `distclean' rules are implemented.
+
+2006-07-06 (r3205) Alexander Chernov  <cher@ispras.ru>
+
+	* main.make: initial revision.
+
+	* uldb_mysql.c: initial revision.
+
+	* Makefile.in: actual compilation commands are moved to main.make.
+
+2006-07-06 (r3202) Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: initial revision.
+

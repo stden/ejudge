@@ -1,0 +1,33 @@
+#!/bin/sh
+# $Id: php.in 7169 2012-11-16 14:53:26Z cher $
+# Copyright (c) 2008-2012 Alexander Chernov <cher@ejudge.ru>
+
+# This is a `compilation' script for the PHP language.
+# The idea is to append "#! ${PHPPATH} -nf" string
+# to the beginning of the file.
+# Usage: php <input> <output>
+
+# using EJUDGE_FLAGS we may pass additional flags
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/php.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  version="unknown"
+  PHPPATH="/usr/bin/php"
+fi
+
+if [ x"${version}" = x ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+echo "#! ${PHPPATH} -nf" > $2
+#echo >> $2
+cat $1 >> $2
+chmod +x $2
+exit 0

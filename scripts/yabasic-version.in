@@ -1,0 +1,93 @@
+#!/bin/sh
+# $Id: yabasic-version.in 5550 2009-02-19 18:14:43Z cher $
+# Copyright (c) 2005-2008 Alexander Chernov <cher@ejudge.ru>
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+
+common_config() {
+  echo 'long_name="YaBasic"'
+  echo 'src_sfx=".bas"'
+  echo 'arch="linux-shared"'
+}
+
+failure() {
+  rm -f conftest*
+  echo 'version='
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'YABASICPATH=/bin/false'
+  [ "${verbose}" = 1 ] && echo "no" >&2
+  exit 1
+}
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+if [ x"$1" = x-v ]
+then
+  verbose=1
+  shift
+fi
+
+# recheck the language
+if [ x"$1" = x-r ]
+then
+  arg="$2"
+  [ x"$2" != x ] && yabasic="$2"
+  [ "${yabasic}" = "" ] && yabasic="yabasic"
+
+  [ "${verbose}" = 1 ] && echo -n "checking whether YaBasic is available..." >&2
+  "${yabasic}" -help >/dev/null 2>&1 || failure
+  version=`${yabasic} -help 2>&1 | grep "yabasic version" | gawk '{ gsub(",", "", $5); print $5; }'`
+  [ "${version}" != "" ] || failure
+  YABASICPATH=`which "${yabasic}"` || failure
+  [ "${YABASICPATH}" != "" ] || failure
+  echo "#! ${YABASICPATH}" > conftest.bas
+  echo 'PRINT "OK"' >> conftest.bas 
+  echo "END" >> conftest.bas
+  chmod +x ./conftest.bas
+  ./conftest.bas >/dev/null 2>&1 || failure
+
+  rm -f ./conftest*
+  echo 'version="'"${version}"'"'
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'YABASICPATH="'"${YABASICPATH}"'"'
+  [ "${verbose}" = 1 ] && echo "yes, ${YABASICPATH}, ${version}" >&2
+  exit 0
+fi
+
+if [ x"$1" = x-l ]
+then
+  echo "YaBasic interpreter [http://www.yabasic.de]"
+  exit 0
+fi
+
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/yabasic.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  YABASICPATH="/usr/bin/yabasic"
+fi
+
+if [ x"${YABASICPATH}" = x -o x"${YABASICPATH}" = x/bin/false ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"$1" = x-p ]
+then
+    echo "${YABASICPATH}"
+    exit 0
+fi
+
+"${YABASICPATH}" -help 2>/dev/null >/dev/null || exit 1
+    
+[ x"$1" = x-f ] && echo -n "YaBasic "
+
+"${YABASICPATH}" -help 2>&1 | grep "yabasic version" | gawk -F '[ ,]' '{ print $5; }'

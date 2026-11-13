@@ -1,0 +1,107 @@
+#!/bin/sh
+# $Id: fpc-version.in 5550 2009-02-19 18:14:43Z cher $
+# Copyright (c) 2005-2008 Alexander Chernov <cher@ejudge.ru>
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+
+common_config() {
+  echo 'long_name="Free Pascal"'
+  echo 'src_sfx=".pas"'
+}
+
+failure() {
+  rm -f conftest*
+  echo 'version='
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'FPCRUN=false'
+  echo 'FPCDIR='
+  [ "${verbose}" = 1 ] && echo "no" >&2
+  exit 1
+}
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+if [ x"$1" = x-v ]
+then
+  verbose=1
+  shift
+fi
+
+# recheck the language
+if [ x"$1" = x-r ]
+then
+  arg="$2"
+  [ x"$2" != x ] && FPCRUN="$2"
+  [ "${FPCRUN}" = "" ] && FPCRUN="fpc"
+
+  [ "${verbose}" = 1 ] && echo -n "checking whether Free Pascal is available..." >&2
+  "${FPCRUN}" -v >/dev/null 2>/dev/null
+  [ $? != 0 -a $? != 1 ] && failure
+  version=`"${FPCRUN}" -h 2>/dev/null | grep "Free Pascal Compiler" | gawk '{ print $5; }'`
+  [ $? != 0 -a $? != 1 ] && failure
+  [ "${version}" != "" ] || failure
+  cat > conftest.pas <<EOF
+begin
+  writeln('ok')
+end.
+EOF
+  "${FPCRUN}" -So -XS conftest.pas -oconftest 2>/dev/null >/dev/null || failure
+  [ -x conftest ] || failure
+  ./conftest > /dev/null 2>/dev/null || failure
+
+  rm -f ./conftest*
+  FPCDIR=`dirname "${FPCRUN}"`
+  [ "${FPCDIR}" = . ] && FPCDIR=""
+  echo 'version="'"${version}"'"'
+  echo 'arg="'"${arg}"'"'
+  common_config
+  echo 'FPCRUN="'"${FPCRUN}"'"'
+  echo 'FPCDIR="'"${FPCDIR}"'"'
+  [ "${verbose}" = 1 ] && echo "yes, ${FPCRUN}, ${version}" >&2
+  exit 0
+fi
+
+if [ x"$1" = x-l ]
+then
+  echo "Free Pascal compiler [http://www.freepascal.org]"
+  exit 0
+fi
+
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/fpc.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  FPCRUN="fpc"
+  FPCDIR=
+fi
+
+if [ x"${FPCRUN}" = x -o x"${FPCRUN}" = xfalse ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${FPCDIR}" != x ]
+then
+    PATH="${FPCDIR}:${PATH}"
+fi
+
+if [ x"$1" = x-p ]
+then
+    echo "${FPCRUN}"
+    exit 0
+fi
+    
+"${FPCRUN}" -h 2>/dev/null >/dev/null || exit 1
+
+[ x"$1" = x-f ] && echo -n "Free Pascal "
+
+"${FPCRUN}" -h 2>/dev/null | grep "Free Pascal Compiler" | gawk '{ print $5; }'
+[ $? != 0 -a $? != 1 ] && exit 1
+exit 0

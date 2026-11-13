@@ -1,0 +1,898 @@
+2013-02-09 (r7359) Alexander Chernov  <cher@ejudge.ru>
+
+	* team_cookie.c, priv_cookie_login.c, lookup_cookie.c, register_contest.c, get_uid_by_pid.c, get_uid_by_pid_2.c, recover_passwd_2.c, get_cookie.c, login.c, priv_login.c, logout.c, priv_cookie.c, list_users.c, register_new.c, register_new_2.c:
+	IPv6 support implementation is in progress...
+
+2013-02-05 (r7338) Alexander Chernov  <cher@ejudge.ru>
+
+	* team_cookie.c, priv_cookie_login.c, lookup_cookie.c, register_contest.c, get_uid_by_pid.c, get_uid_by_pid_2.c, recover_passwd_2.c, get_cookie.c, login.c, priv_login.c, logout.c, priv_cookie.c, list_users.c, register_new.c, register_new_2.c:
+	copyright notice is updated;
+	ej_ip_t -> ej_ip4_t;
+	transition to IPv6 support is started.
+
+2011-05-08 (r6315) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_prev_user_id.c:
+	initial revision
+
+2011-05-01 (r6289) Alexander Chernov  <cher@ejudge.ru>
+
+	* create_user_2.c:
+	initial revision
+
+2011-04-22 (r6262) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_count.c:
+	(userlist_clnt_get_count) 'group_id' parameter is added.
+
+	* list_users_2.c:
+	(userlist_clnt_list_users_2) 'group_id' parameter is added.
+
+2011-04-20 (r6254) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_count.c:
+	initial revision
+
+2011-04-19 (r6249) Alexander Chernov  <cher@ejudge.ru>
+
+	* list_users_2.c:
+	initial revision
+
+2011-03-27 (r6169) Alexander Chernov  <cher@ejudge.ru>
+
+	* send_packet.c:
+	copyright notice is updated;
+	"reuse_integral.h" is included instead of <reuse/integral.h>.
+
+2011-03-27 (r6152) Alexander Chernov  <cher@ejudge.ru>
+
+	* private.h:
+	"reuse_osdeps.h" is included instead of <reuse/osdeps.h>.
+
+2011-03-26 (r6138) Alexander Chernov  <cher@ejudge.ru>
+
+	* private.h:
+	"reuse_logger.h" is used instead of <reuse/logger.h>.
+
+2011-03-26 (r6130) Alexander Chernov  <cher@ejudge.ru>
+
+	* private.h:
+	copyright notice is updated;
+	"reuse_xalloc.h" is included instead of <reuse/xalloc.h>.
+
+2010-11-01 (r6014) Alexander Chernov  <cher@ejudge.ru>
+
+	* close.c: copyright notice is updated;
+	(userlist_clnt_close) fd and memory leak is fixed.
+
+2010-07-15 (r5947) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_xml_by_text.c: initial revision.
+
+2010-05-23 (r5801) Alexander Chernov  <cher@ejudge.ru>
+
+	* list_all_users.c:
+	(userlist_clnt_list_all_users) any command is allowed.
+
+2010-05-15 (r5796) Alexander Chernov  <cher@ejudge.ru>
+
+	* create_user.c: copyright notice is updated;
+	(userlist_clnt_create_user) `cmd' parameter is added.
+
+	* delete_field.c: copyright notice is updated;
+	(userlist_clnt_delete_field) `cmd' parameter is added.
+
+	* edit_field.c: copyright notice is updated;
+	(userlist_clnt_edit_field) `cmd' parameter is added.
+
+	* list_all_users.c: copyright notice is updated;
+	(userlist_clnt_list_all_users) `ULS_LIST_ALL_GROUPS'
+	  is supported.
+
+2008-12-26 (r5480) Alexander Chernov  <cher@ejudge.ru>
+
+	* bytes_available.c: copyright notice is updated;
+	(userlist_clnt_bytes_available) conditional compilation
+	  for SIOCINQ is implemented.
+
+2008-12-25 (r5466) Alexander Chernov  <cher@ejudge.ru>
+
+	* do_pass_fd.c: copyright notice is updated;
+	"sock_op.h" is included;
+	(userlist_clnt_do_pass_fd) `sock_op_put_fds' is used.
+
+	* open.c: copyright notice is updated;
+	"sock_op.h" is included;
+	(userlist_clnt_open) `sock_op_enable_creds', `sock_op_put_creds'
+	  are used.
+
+2008-10-30 (r5231) Alexander Chernov  <cher@ejudge.ru>
+
+	* recover_passwd_2.c: copyright notice is updated;
+	(userlist_clnt_recover_passwd_2) `p_regstatus' parameter
+	  is added.
+
+2008-09-30 (r5123) Alexander Chernov  <cher@ejudge.ru>
+
+	* delete_info.c: copyright notice is updated;
+	(userlist_clnt_delete_info) uninitialized memory read is fixed.
+
+2007-12-08 (r4578) Alexander Chernov  <cher@ejudge.ru>
+
+	* priv_login.c:
+	(userlist_clnt_priv_login) `priv_level' parameter is removed.
+
+	* team_cookie.c:
+	(userlist_clnt_team_cookie) `p_contest_id' parameter is added.
+
+2007-11-29 (r4544) Alexander Chernov  <cher@ejudge.ru>
+
+	* create_member.c: copyright notice is updated;
+	(userlist_clnt_create_member) the new member serial is returned.
+
+	* get_cookie.c:
+	(userlist_clnt_get_cookie) `locale_id' field is removed.
+
+	* lookup_cookie.c: copyright notice is updated;
+	(userlist_clnt_lookup_cookie) `locale_id' field is removed.
+
+	* priv_cookie.c: copyright notice is updated;
+	(userlist_clnt_priv_cookie) `locale_id' parameter is removed.
+
+	* priv_cookie_login.c: copyright notice is updated;
+	(userlist_clnt_priv_cookie_login) `priv_level' parameter removed;
+	  the outbound packet now has type `userlist_pk_cookie_login'.
+
+	* register_contest.c: copyright notice is updated;
+	(userlist_clnt_register_contest) new parameters `ip', `ssl_flag'
+	  are added.
+
+	* team_cookie.c: copyright notice is updated;
+	(userlist_clnt_team_cookie) `locale_id', `p_contest_id' parameters
+	  are removed.
+
+2007-11-20 (r4534) Alexander Chernov  <cher@ejudge.ru>
+
+	* lookup_user.c: copyright notice is updated;
+	(userlist_clnt_lookup_user) `contest_id' parameter is added.
+
+2007-11-20 (r4521) Alexander Chernov  <cher@ejudge.ru>
+
+	* private.h: copyright notice is updated;
+	python compatibility is improved.
+
+	* create_user.c: copyright notice is updated;
+	(userlist_clnt_create_user) `login' parameter is added.
+
+	* do_pass_fd.c: copyright notice is updated;
+	(userlist_clnt_do_pass_fd) python compatibility is improved.
+
+	* login.c:
+	(userlist_clnt_login) minor fixes.
+
+	* open.c: copyright notice is updated;
+	(userlist_clnt_open) python compatibility is improved.
+
+	* register_new_2.c:
+	(userlist_clnt_register_new_2) `p_user_id' parameter is added.
+
+	* send_packet.c: copyright notice is updated;
+	(userlist_clnt_send_packet) python compatibility is improved.
+
+	* recv_packet.c: copyright notice is updated;
+	(userlist_clnt_recv_packet) notice is updated.
+
+2007-07-23 (r4228) Alexander Chernov  <cher@ejudge.ru>
+
+	* import_csv_users.c:
+	initial revision
+
+2007-03-31 (r4054) Alexander Chernov  <cher@ejudge.ru>
+
+	* edit_field_seq.c:
+	initial revision
+
+2007-03-16 (r4026) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_cookie.c:
+	(userlist_clnt_get_cookie) parameters `p_reg_status', `p_reg_flags'
+	  are added.
+
+2007-03-16 (r4021) Alexander Chernov  <cher@ejudge.ru>
+
+	* register_new_2.c:
+	(userlist_clnt_register_new_2) new parameters `action' and
+	  `self_url' are added and passed to the server.
+
+2007-03-14 (r4017) Alexander Chernov  <cher@ejudge.ru>
+
+	* register_new_2.c: copyright year is updated;
+	(userlist_clnt_register_new_2) `p_login' parameter is added.
+
+2007-03-12 (r4015) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_cookie.c: copyright notice is updated;
+	(userlist_clnt_get_cookie) `p_team_login' parameter is added.
+
+2007-03-02 (r3990) Alexander Chernov  <cher@ejudge.ru>
+
+	* login.c:
+	(userlist_clnt_login) `p_locale_id' parameter is removed.
+
+	* priv_login.c: copyright year is updated;
+	(userlist_clnt_priv_login) `p_locale_id' parameter is removed.
+
+	* team_login.c: copyright year is updated;
+	(userlist_clnt_team_login) `p_locale_id' parameter is removed.
+
+2007-03-01 (r3988) Alexander Chernov  <cher@ejudge.ru>
+
+	* login.c: copyright year is updated;
+	(userlist_clnt_login) `p_locale_id' and `p_name' parameters are
+	  swapped.
+
+2006-11-24 (r3699) Alexander Chernov  <cher@ejudge.ru>
+
+	* priv_cookie_login.c:
+	initial revision
+
+2006-11-17 (r3669) Alexander Chernov  <cher@ejudge.ru>
+
+	* control.c:
+	initial revision
+
+2006-10-29 (r3595) Alexander Chernov  <cher@ejudge.ru>
+
+	* create_member.c:
+	command `ULS_CREATE_MEMBER' is sent instead of `ULS_ADD_FIELD'.
+
+2006-10-22 (r3550) Alexander Chernov  <cher@ejudge.ru>
+
+	* recover_passwd_2.c:
+	initial revision
+
+2006-10-22 (r3545) Alexander Chernov  <cher@ejudge.ru>
+
+	* register_new.c:
+	(userlist_clnt_register_new) `cmd' parameter is added;
+	  `action' parameter is added;
+	  `self_url' parameter is added.
+
+2006-10-17 (r3527) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_database.c:
+	initial revision
+
+2006-10-12 (r3511) Alexander Chernov  <cher@ejudge.ru>
+
+	* cnts_passwd_op.c:
+	(userlist_clnt_cnts_passwd_op) renamed from
+	  `userlist_clnt_clear_team_passwords';
+	  `cmd' parameter is added.
+
+2006-09-21 (r3382) Alexander Chernov  <cher@ejudge.ru>
+
+	* open.c: copyright notice is updated;
+	(userlist_clnt_open) `msgbuf' is zeroed.
+
+2006-09-14 (r3354) Alexander Chernov  <cher@ejudge.ru>
+
+	* set_passwd.c:
+	(userlist_clnt_set_passwd) new parameters `cmd', `contest_id'
+	  are added;
+
+	* team_set_passwd.c:
+	file is removed, since `userlist_clnt_set_passwd' function covers
+	all cases.
+
+2006-09-13 (r3350) Alexander Chernov  <cher@ejudge.ru>
+
+	* recv_packet.c: copyright notice is updated;
+	(userlist_clnt_recv_packet) connection fd is not closed upon error.
+
+	* set_cookie.c: initial revision.
+
+2006-09-11 (r3345) Alexander Chernov  <cher@ejudge.ru>
+
+	* private.h: copyright notice is updated;
+	(struct userlist_clnt) new fields added: `notification_callback',
+	  `notification_user_data'.
+
+	* get_param.c, clear_team_passwords.c, get_contests.c, get_uid_by_pid.c, lookup_user.c, priv_cookie.c, delete_info.c, generate_team_passwd.c, register_contest.c, edit_field.c, dump_database.c, get_info.c, delete_cookie.c, create_user.c, lookup_cookie.c, delete_field.c, set_info.c, logout.c, map_contest.c, set_passwd.c, register_new_2.c, change_registration.c, team_cookie.c, team_set_passwd.c, list_all_users.c, admin_process.c, get_uid_by_pid_2.c, create_member.c, list_users.c, register_new.c:
+	copyright notice is updated;
+	`userlist_clnt_read_and_notify' is used instead of
+	  `userlist_clnt_recv_packet', so the contest change callbacks
+	  are supported fully.
+
+	* priv_login.c, lookup_user_id.c, notify.c, login.c, get_cookie.c, team_login.c:
+	`userlist_clnt_read_and_notify' is used instead of
+	  `userlist_clnt_recv_packet', so the contest change callbacks
+	  are supported fully.
+
+2006-09-07 (r3319) Alexander Chernov  <cher@ejudge.ru>
+
+	* read_notification.c, notify.c:
+	initial revision
+
+2006-09-07 (r3314) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_cookie.c:
+	(userlist_clnt_get_cookie) `cmd' parameter is added.
+
+2006-09-06 (r3306) Alexander Chernov  <cher@ejudge.ru>
+
+	* lookup_user_id.c:
+	initial revision
+
+2006-09-05 (r3302) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_cookie.c:
+	(userlist_clnt_get_cookie) `origin_ip', `ssl' are correctly filled.
+
+2006-09-05 (r3299) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_cookie.c:
+	(userlist_clnt_get_cookie) `contest_id' parameter is removed.
+
+2006-09-03 (r3287) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_cookie.c:
+	initial revision
+
+2006-09-03 (r3285) Alexander Chernov  <cher@ejudge.ru>
+
+	* priv_login.c:
+	(userlist_clnt_priv_login) `role' parameter is added and passed to
+	  the server.
+
+2006-09-03 (r3282) Alexander Chernov  <cher@ejudge.ru>
+
+	* get_fd.c:
+	initial revision
+
+2006-09-02 (r3281) Alexander Chernov  <cher@ejudge.ru>
+
+	* priv_login.c: copyright notice is updated;
+	(userlist_clnt_priv_login) `cmd' parameter is added.
+
+	* login.c: copyright notice is updated;
+	(userlist_clnt_login) `cmd' parameter is added.
+
+	* team_login.c:
+	(userlist_clnt_team_login) `cmd' parameter is added.
+
+2006-08-30 (r3252) Alexander Chernov  <cher@ispras.ru>
+
+	* team_login.c: copyright notice is slightly updated;
+	(userlist_clnt_team_login) bug: incorrect calculation of incoming
+	  packet.
+
+2006-08-30 (r3244) Alexander Chernov  <cher@ispras.ru>
+
+	* add_field.c: removed.
+
+2006-08-30 (r3243) Alexander Chernov  <cher@ispras.ru>
+
+	* delete_info.c: renamed from `delete_member.c'.
+
+	* delete_member.c: renamed to `delete_info.c'.
+
+2006-08-30 (r3242) Alexander Chernov  <cher@ispras.ru>
+
+	* delete_member.c: renamed from remove_member.c;
+	(userlist_clnt_delete_info) renamed from `userlist_clnt_remove_member';
+	  `role_id', `pers_id' parameters are removed;
+	  `cmd' parameter is added.
+
+	* delete_field.c:
+	(userlist_clnt_delete_field) `cookie' parameter is removed.
+
+	* delete_cookie.c: initial revision, copied from `delete_member.c'.
+
+	* remove_member.c: renamed to delete_member.c.
+
+2006-08-26 (r3236) Alexander Chernov  <cher@ispras.ru>
+
+	* edit_field.c: `role', `pers' parameters are removed,
+	  `serial' parameter is added.
+
+	* add_field.c: the same as above.
+
+	* delete_field.c: `role', `pers' parameters are removed,
+	  `serial', `cookie' parameters are added.
+
+	* create_user.c, create_member.c: initial revision.
+
+2006-06-28 (r3185) Alexander Chernov  <cher@ispras.ru>
+
+	* get_uid_by_pid.c: copyright notice is updated;
+	(userlist_clnt_get_uid_by_pid) `contest_id' parameter is added;
+	  `contest_id' parameter is passed to the server.
+
+	* get_uid_by_pid_2.c: copyright notice is updated;
+	(userlist_clnt_get_uid_by_pid_2) `contest_id' parameter is added;
+	  `contest_id' parameter is passed to the server.
+
+2006-06-25 (r3176) Alexander Chernov  <cher@ispras.ru>
+
+	* priv_login.c: copyright notice is updated;
+	(userlist_clnt_priv_login) `use_cookies' parameter is removed;
+	  `use_cookies' field of the packet is removed.
+
+	* login.c: copyright notice is updated;
+	(userlist_clnt_login) `use_cookies' parameter is removed;
+	  `use_cookies' field of the packet is removed.
+
+	* team_login.c: copyright notice is updated;
+	(userlist_clnt_team_login) `use_cookies' parameter is removed;
+	  `use_cookies' field of the packet is removed.
+
+	* register_new_2.c:
+	(userlist_clnt_register_new_2) `use_cookies' parameter is removed;
+	  `use_cookies' field of the packet is removed.
+
+	* register_new.c: copyright notice is updated;
+	(userlist_clnt_register_new) `use_cookies' parameter is removed;
+	  `use_cookies' field of the packet is removed.
+
+2006-06-25 (r3164) Alexander Chernov  <cher@ispras.ru>
+
+	* edit_field.c: copyright notice is updated;
+	(userlist_clnt_edit_field) `contest_id' parameter is added;
+	  `contest_id' is passed to the server.
+
+	* get_info.c: copyright notice is updated;
+	(userlist_clnt_get_info) `contest_id' parameter is added;
+	  `contest_id' is passed to the server.
+
+	* add_field.c: copyright notice is updated;
+	(userlist_clnt_add_field) `contest_id' parameter is added;
+	  `contest_id' is passed to the server.
+
+	* delete_field.c: copyright notice is updated;
+	(userlist_clnt_delete_field) `contest_id' parameter is added;
+	  `contest_id' is passed to the server.
+
+	* remove_member.c: copyright notice is updated;
+	(userlist_clnt_remove_member) `contest_id' parameter is added;
+	  `contest_id' is passed to the server.
+
+2006-06-10 (r3156) Alexander Chernov  <cher@ispras.ru>
+
+	* ChangeLog:
+	Transition from CVS to SVN.
+
+2006-04-17  Alexander Chernov  <cher@ispras.ru>
+
+	* register_new_2.c:
+	initial revision.
+
+2006-04-10  Alexander Chernov  <cher@ispras.ru>
+
+	* lookup_user.c:
+	initial revision
+
+2005-11-25  Alexander Chernov  <cher@ispras.ru>
+
+	* do_pass_fd.c, dump_database.c, generate_team_passwd.c, list_users.c, open.c, recv_packet.c, send_packet.c:
+	Copyright notice is updated;
+	"errlog.h" is included.
+
+2005-11-03  Alexander Chernov  <cher@ispras.ru>
+
+	* get_uid_by_pid.c:
+	(userlist_clnt_get_uid_by_pid) `ej_ip_t' is used for `origin_ip';
+	  `ej_cookie_t' type is used for `p_cookie'.
+
+	* get_uid_by_pid_2.c:
+	(userlist_clnt_get_uid_by_pid_2) `ej_ip_t' is used for `origin_ip';
+	  `ej_cookie_t' type is used for `p_cookie'.
+
+	* list_users.c:
+	(userlist_clnt_list_users) `ej_ip_t' is used for `origin_ip';
+	  `ssl' parameter is added and passed to the server.
+
+	* logout.c: (userlist_clnt_login) `ej_ip_t' is used for `origin_ip';
+	  `ej_cookie_t' type is used for `p_cookie';
+	  `ssl' parameter is added and passed to the server.
+
+	* login.c: (userlist_clnt_login) `ej_ip_t' is used for `origin_ip';
+	  `ej_cookie_t' type is used for `p_cookie'.
+
+	* lookup_cookie.c:
+	(userlist_clnt_lookup_cookie) `ej_ip_t' is used for `origin_ip';
+	  `ej_cookie_t' type is used for `p_cookie'.
+
+	* priv_cookie.c:
+	(userlist_clnt_priv_cookie) `ej_ip_t' is used for `origin_ip';
+	  `ej_cookie_t' type is used for `p_cookie'.
+
+	* priv_login.c:
+	(userlist_clnt_priv_login) `ej_ip_t' is used for `origin_ip';
+	  `ej_cookie_t' type is used for `p_cookie'.
+
+	* register_new.c:
+	(userlist_clnt_register_new) `ej_ip_t' is used for `origin_ip';
+	  `ssl' parameter is added and passed to the server.
+
+	* send_packet.c: (userlist_clnt_send_packet) bugfixes.
+
+	* team_cookie.c:
+	(userlist_clnt_team_cookie) `ej_ip_t' is used for for `origin_ip';
+	  `ej_cookie_t' is used for `p_cookie'.
+
+	* team_login.c:
+	(userlist_clnt_team_login) `ej_ip_t' is used for for `origin_ip';
+	  `ej_cookie_t' is used for `p_cookie'.
+
+2005-11-03  Alexander Chernov  <cher@ispras.ru>
+
+	* send_packet.c: (userlist_clnt_send_packet) fix for a stupid bug.
+
+	* add_field.c: (userlist_clnt_add_field) fixes for 64-bit platforms.
+
+	* change_registration.c: copyright notice is updated;
+	(userlist_clnt_change_registration) fixes for 64-bit platforms.
+
+	* delete_field.c: copyright notice is updated;
+	(userlist_clnt_delete_field) fixes for 64-bit platforms.
+
+2005-11-02  Alexander Chernov  <cher@ispras.ru>
+
+	* dump_database.c: copyright notice is updated;
+	(userlist_clnt_dump_database) fixes for 64-bit platforms.
+
+	* edit_field.c: copyright notice is updated;
+	(userlist_clnt_edit_field) fixes for 64-bit platforms.
+
+	* generate_team_passwd.c: copyright notice is updated;
+	(userlist_clnt_generate_team_passwd) fixes for 64-bit platforms.
+
+	* get_contests.c: copyright notice is updated;
+	(userlist_clnt_get_contests) fixes for 64-bit platforms.
+
+	* get_info.c: copyright notice is updated;
+	(userlist_clnt_get_info) fixes for 64-bit platforms.
+
+	* get_param.c: (userlist_clnt_get_param) fixes for 64-bit platforms.
+
+	* list_all_users.c: copyright notice is updated;
+	(userlist_clnt_list_all_users) fixes for 64-bit platforms.
+
+	* list_users.c: copyright notice is updated;
+	(userlist_clnt_list_users) "const" qualifier is added for `url'
+	  and `srch' parameters;
+	  fixes for 64-bit platforms.
+
+	* login.c: (userlist_clnt_lookup_login) fixes for 64-bit platforms.
+
+	* lookup_cookie.c:
+	(userlist_clnt_lookup_cookie) fixes for 64-bit platforms.
+
+	* map_contest.c: copyright notice is updated;
+	(userlist_clnt_map_contest) fixes for 64-bit platforms.
+
+	* open.c: copyright notice is updated;
+	(userlist_clnt_open) fixes for 64-bit platforms.
+
+	* priv_cookie.c:
+	(userlist_clnt_priv_cookie) fixes for 64-bit platforms.
+
+	* priv_login.c:
+	(userlist_clnt_priv_login) fixes for 64-bit platforms.
+
+	* register_contest.c:
+	(userlist_clnt_register_contest) fixes for 64-bit platforms.
+
+	* register_new.c: copyright notice is updated;
+	(userlist_clnt_register_new) fixes for 64-bit platforms.
+
+	* remove_member.c: copyright notice is updated;
+	(userlist_clnt_remove_member) fixes for 64-bit platforms.
+
+	* set_info.c: copyright notice is updated;
+	(userlist_clnt_set_info) "const" qualifier is added to `info' paramter;
+	  fixes for 64-bit platforms.
+
+	* team_cookie.c:
+	(userlist_clnt_team_cookie) fixes for 64-bit architectures.
+
+	* team_login.c:
+	(userlist_clnt_team_login) fixes for 64-bit architectures.
+
+	* set_passwd.c: copyright notice is updated;
+	(userlist_clnt_set_passwd) "const" qualifier is added to
+	  `old_pwd', `new_pwd' parameters;
+	  fixes for 64-bit architectures (x86_64, etc).
+
+	* team_set_passwd.c: copyright notice is updated;
+	(userlist_clnt_team_set_passwd) "const" qualifier is added to
+	  `old_pwd', `new_pwd' parameters;
+	  fixes for 64-bit architectures (x86_64, etc).
+
+	* send_packet.c: copyright notice is updated;
+	<reuse/integral.h> is included;
+	<sys/uio.h> is included;
+	(userlist_clnt_send_packet) function is rewritten to avoid copying
+	  of the buffer.
+
+2005-10-31  Alexander Chernov  <cher@ispras.ru>
+
+	* register_contest.c:
+	(userlist_clnt_register_contest) check of the `cmd' parameter is
+	  commented out, since the function may be called for 4 more
+	  commands.
+
+2005-08-07  Alexander Chernov  <cher@ispras.ru>
+
+	* get_uid_by_pid.c: copyright notice is updated;
+	(userlist_clnt_get_uid_by_pid) added parameter `p_ssl' to store
+	  whether the requested connection was over https.
+
+	* get_uid_by_pid_2.c: copyright notice is updated;
+	(userlist_clnt_get_uid_by_pid_2) added parameter `p_ssl' to store
+	  whether the requested connection was over https.
+
+	* login.c: copyright notice is updated;
+	(userlist_clnt_login) added parameter `ssl' for logins over https,
+	  the `ssl' flag is passed to the server.
+
+	* lookup_cookie.c: copyright notice is updated;
+	(userlist_clnt_lookup_cookie) added parameter `ssl' for logins over
+	  https, the `ssl' flag is passed to the server.
+
+	* priv_cookie.c: copyright notice is updated;
+	(userlist_clnt_priv_cookie) added parameter `ssl' for logins over https,
+	  the `ssl' flag is passed to the server.
+
+	* priv_login.c: copyright notice is updated;
+	(userlist_clnt_priv_login) added parameter `ssl' for logins over https,
+	  the `ssl' flag is passed to the server.
+
+	* team_cookie.c: copyright notice is updated;
+	(userlist_clnt_team_cookie) added parameter `ssl' for logins over https,
+	  the `ssl' flag is passed to the server.
+
+	* team_login.c: copyright notice is updated;
+	(userlist_clnt_team_login) added parameter `ssl' for logins over https,
+	  the `ssl' flag is passed to the server.
+
+2005-07-28  Alexander Chernov  <cher@ispras.ru>
+
+	* get_param.c: initial revision
+
+2005-07-22  Alexander Chernov  <cher@ispras.ru>
+
+	* dump_database.c: copyright notice is updated;
+	(userlist_clnt_dump_database) `cmd' parameter is added to pass the
+	  command code;
+	  `html_flag' parameter is added, which determines whether HTML
+	  format is used.
+
+	* add_field.c: copyright notice is updated;
+	(userlist_clnt_add_field) pointer to the user_id variable is passed
+	  in parameters instead of value. The user_id of the new user is
+	  returned from the server.
+
+2005-07-10  Alexander Chernov  <cher@ispras.ru>
+
+	* register_contest.c: copyright notice is updated;
+	(userlist_clnt_register_contest) allocated memory is zeroed.
+
+2005-07-08  Alexander Chernov  <cher@ispras.ru>
+
+	* admin_process.c: copyright notice is updated;
+	(userlist_clnt_admin_process) new parameters added:
+	  p_uid - pointer where to store the returned user_id;
+	  p_login - pointer where to store pointer to the user login string;
+	  p_name - pointer where to store pointer to the user name string;
+	  the returned packet is parsed and the data is stored according to
+	  the passed parameters.
+
+2005-06-23  Alexander Chernov  <cher@ispras.ru>
+
+	* logout.c: copyright notice is updated;
+	(userlist_clnt_logout) new parameter `cmd' is added, which value is
+	  used as the command code.
+
+2004-11-26  Alexander Chernov  <cher@ispras.ru>
+
+	* get_uid_by_pid_2.c:
+	(userlist_clnt_get_uid_by_pid_2) minor changes and bugfixes.
+
+2004-11-13  Alexander Chernov  <cher@ispras.ru>
+
+	* get_uid_by_pid_2.c: initial revision
+
+2004-06-19  Alexander Chernov  <cher@ispras.ru>
+
+	* login.c, logout.c, lookup_cookie.c, priv_cookie.c, priv_login.c, team_cookie.c, team_login.c:
+	The `koi8-r' charset specification is removed from file headers.
+
+	* add_field.c, admin_process.c, change_registration.c, close.c, delete_field.c, do_pass_fd.c, dump_database.c, edit_field.c, generate_team_passwd.c, get_contests.c, get_info.c, get_uid_by_pid.c, list_all_users.c, list_users.c, map_contest.c, open.c, pass_fd.c, recv_packet.c, register_contest.c, register_new.c, remove_member.c, send_packet.c, set_info.c, set_passwd.c, team_set_passwd.c:
+	The copyright notice is updated;
+	The `koi8-r' charset specification is removed from the file header.
+
+2004-05-04  Alexander Chernov  <cher@ispras.ru>
+
+	* team_login.c: copyright notice is updated;
+	(userlist_clnt_team_login) a GNU C 3.3 warning about breaking strict
+	  aliasing rules in -Wall -O2 mode is fixed.
+
+	* team_cookie.c: copyright notice is updated;
+	(userlist_clnt_team_cookie) a GNU C 3.3 warning about breaking strict
+	  aliasing rules in -Wall -O2 mode is fixed.
+
+	* priv_login.c: copyright notice is updated;
+	(userlist_clnt_priv_login) a GNU C 3.3 warning about breaking strict
+	  aliasing rules in -Wall -O2 mode is fixed.
+
+	* priv_cookie.c: copyright notice is updated;
+	(userlist_clnt_priv_cookie) a GNU C 3.3 warning about breaking strict
+	  aliasing rules in -Wall -O2 mode is fixed.
+
+	* lookup_cookie.c: copyright notice is updated;
+	(userlist_clnt_lookup_cookie) a GNU C 3.3 warning about breaking strict
+	  aliasing rules in -Wall -O2 mode is fixed.
+
+	* logout.c: copyright notice is updated;
+	(userlist_clnt_logout) a GNU C 3.3 warning about breaking strict
+	  aliasing rules in -Wall -O2 mode is fixed.
+
+	* login.c: copyright notice is updated;
+	(userlist_clnt_login) a GNU C 3.3 warning about breaking strict
+	  aliasing rules in -Wall -O2 mode is fixed.
+
+2003-12-14  Alexander Chernov  <cher@ispras.ru>
+
+	* set_info.c:
+	(userlist_clnt_set_info) a new parameter `contest_id' is added to
+	  pass to the server in order to enable strict checking for
+	  member limits.
+
+2003-10-30  Alexander Chernov  <cher@ispras.ru>
+
+	* list_all_users.c:
+	(userlist_clnt_list_all_users) `cmd' parameter added, which may
+	  be either `ULS_LIST_ALL_USERS', or `ULS_LIST_STANDINGS_USERS'.
+
+	* map_contest.c:
+	(userlist_clnt_map_contest) `p_sem_key' and `p_shm_key' parameters
+	  are allowed to be NULL pointers.
+
+2003-10-20  Alexander Chernov  <cher@ispras.ru>
+
+	* team_set_passwd.c:
+	(userlist_clnt_team_set_passwd) bug: the outbound packet size is
+	  calculated correctly.
+
+	* clear_team_passwords.c: Initial revision
+
+2003-10-06  Alexander Chernov  <cher@ispras.ru>
+
+	* generate_team_passwd.c:
+	(userlist_clnt_generate_team_passwd) bug fixed: we must wait until
+	  the server completes writing of the passwd file.
+
+2003-09-20  Alexander Chernov  <cher@ispras.ru>
+
+	* generate_team_passwd.c:
+	(userlist_clnt_generate_team_passwd) a new parameter `cmd' is added.
+
+2003-09-06  Alexander Chernov  <cher@ispras.ru>
+
+	* team_set_passwd.c, team_cookie.c, send_packet.c, remove_member.c, register_contest.c, recv_packet.c, priv_login.c, priv_cookie.c, pass_fd.c, open.c, map_contest.c, lookup_cookie.c, logout.c, list_all_users.c, get_uid_by_pid.c, get_contests.c, generate_team_passwd.c, do_pass_fd.c, close.c, change_registration.c, admin_process.c:
+	copyright notice is updated
+
+	* login.c: copyright notice is updated.
+	(userlist_clnt_login) packet length calculation is fixed.
+
+2003-06-25  Alexander Chernov  <cher@ispras.ru>
+
+	* add_field.c: copyright notice is updated;
+	(userlist_clnt_add_field) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+	* delete_field.c: copyright notice is updated;
+	(userlist_clnt_delete_field) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+	* dump_database.c:
+	(userlist_clnt_dump_database) better behavior in case of error
+	  implemented.
+
+	* edit_field.c: copyright notice is updated;
+	(userlist_clnt_edit_field) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+	* get_info.c: copyright notice is updated;
+	(userlist_clnt_get_info) a new parameter 'cmd' added which cound
+	  be either ULS_GET_USER_INFO or ULS_PRIV_GET_USER_INFO.
+
+	* list_users.c: copyright notice is updated;
+	(userlist_clnt_list_users) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+	* register_contest.c: copyright notice is updated;
+	(userlist_clnt_register_contest) a new parameter is added: 'cmd',
+	  which could be either ULS_REGISTER_CONTEST or
+	  ULS_PRIV_REGISTER_CONTEST.
+
+	* register_new.c: copyright notice is updated;
+	(userlist_clnt_register_new) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+	* set_info.c: copyright notice is updated;
+	(userlist_clnt_set_info) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+	* set_passwd.c: copyright notice is updated;
+	(userlist_clnt_set_passwd) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+	* team_login.c: copyright notice is updated;
+	(userlist_clnt_team_login) the size of outcoming packet is
+	  counted differently: the string-terminating NUL characters are
+	  counted in the size of the packet structure.
+
+2003-01-31  Alexander Chernov  <cher@ispras.ru>
+
+	* dump_database.c: initial revision
+
+2002-12-30  Alexander Chernov  <cher@ispras.ru>
+
+	* team_set_passwd.c:
+	(userlist_clnt_team_set_passwd) new argument `contest_id' is added
+	  which is passed to the server.
+
+2002-12-21  Alexander Chernov  <cher@ispras.ru>
+
+	* team_login.c:
+	(userlist_clnt_team_login) any of parameters `p_user_id',
+	  `p_cookie', `p_locale_id', `p_name' may be NULL.
+
+	* team_cookie.c:
+	(userlist_clnt_team_cookie) any of `p_user_id', `p_locale_id',
+	  `p_contest_id', `p_login', `p_name' may be NULL.
+
+	* get_uid_by_pid.c:
+	(userlist_clnt_get_uid_by_pid) new parameter `p_ip' to return the
+	  IP-address, used for authentification.
+
+2002-12-17  Alexander Chernov  <cher@ispras.ru>
+
+	* priv_cookie.c, logout.c: Initial revision
+
+2002-12-14  Alexander Chernov  <cher@ispras.ru>
+
+	* priv_login.c: Initial revision
+
+	* get_uid_by_pid.c:
+	(userlist_clnt_get_uid_by_pid) parameter `p_priv_level' added
+	  and read from the incoming packet.
+
+2002-12-07  Alexander Chernov  <cher@ispras.ru>
+
+	* get_uid_by_pid.c: Initial revision
+
+2002-12-06  Alexander Chernov  <cher@ispras.ru>
+
+	* send_packet.c: <errno.h> is included.
+
+	* open.c: <signal.h> is included;
+	(userlist_clnt_open) SIGPIPE is ignored.
+
+	* do_pass_fd.c:
+	(userlist_clnt_do_pass_fd) `errno' is saved for before `err' call
+	   as it is used later.
+
+	* send_packet.c, do_pass_fd.c, team_set_passwd.c, team_login.c, team_cookie.c, set_passwd.c, set_info.c, remove_member.c, list_users.c, register_new.c, register_contest.c, recv_packet.c, private.h, pass_fd.c, open.c, map_contest.c, lookup_cookie.c, login.c, list_all_users.c, get_info.c, get_contests.c, generate_team_passwd.c, edit_field.c, delete_field.c, close.c, change_registration.c, admin_process.c, add_field.c:
+	Initial revision
+

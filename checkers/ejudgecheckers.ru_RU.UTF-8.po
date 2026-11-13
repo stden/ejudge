@@ -1,0 +1,404 @@
+# -*- mode: po; coding: utf-8 -*-
+# ejudgecheckers messages catalog
+# $Id: ejudgecheckers.ru_RU.UTF-8.po 7463 2013-10-22 05:40:02Z cher $
+# Copyright (C) 2013 Alexander Chernov <cher@ejudge.ru>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: ejudge 2.3\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2013-10-22 09:27+0400\n"
+"PO-Revision-Date: 2013-10-22 09:38+0400\n"
+"Last-Translator: Alexander Chernov <cher@ejudge.ru>\n"
+"Language-Team: Russian <ru@li.org>\n"
+"Language: Russian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, c-format
+msgid "%s: %d: end-of-line expected"
+msgstr "%s: %d: ожидался конец строки"
+
+#, c-format
+msgid "%s: %d: invalid control character with code %d"
+msgstr "%s: %d: недопустимый управляющий символ с кодом %d"
+
+#, c-format
+msgid "%s: %s: input error"
+msgstr "%s: %s: ошибка ввода"
+
+#, c-format
+msgid "%s: `-' before uint32 value"
+msgstr "%s: знак '-' перед 32-битным беззнаковым целым (uint32) значением"
+
+#, c-format
+msgid "%s: `-' before uint64 value"
+msgstr "%s: знак '-' перед 64-битным беззнаковым целым (uint64) значением"
+
+#, c-format
+msgid "%s: cannot open %s for reading"
+msgstr "%s: ошибка открытия %s для чтения"
+
+#, c-format
+msgid "%s: cannot parse double value"
+msgstr "%s: ошибка конвертации в значение типа double"
+
+#, c-format
+msgid "%s: cannot parse int32 value"
+msgstr "%s: ошибка конвертации в 32-битное целое (int32) значение"
+
+#, c-format
+msgid "%s: cannot parse int64 value"
+msgstr "%s: ошибка конвертации в 64-битное целое (int64) значение"
+
+#, c-format
+msgid "%s: cannot parse long double value"
+msgstr "%s: ошибка конвертации в значение типа long double"
+
+#, c-format
+msgid "%s: cannot parse uint32 value"
+msgstr "%s: ошибка конвертации в 32-битное беззнаковое целое (uint32) значение"
+
+#, c-format
+msgid "%s: cannot parse uint64 value"
+msgstr "%s: ошибка конвертации в 64-битное беззнаковое целое (uint64) значение"
+
+#, c-format
+msgid "%s: double value is out of range"
+msgstr "%s: число не попадает в диапазон типа double"
+
+#, c-format
+msgid "%s: end-of-line expected"
+msgstr "%s: ожидался конец строки"
+
+#, c-format
+msgid "%s: garbage where EOF expected"
+msgstr "%s: мусорный вывод там, где ожидался конец файла"
+
+#, c-format
+msgid "%s: input element is too long"
+msgstr "%s: элемент ввода имеет слишком большую длину"
+
+#, c-format
+msgid "%s: input error"
+msgstr "%s: ошибка ввода"
+
+#, c-format
+msgid "%s: input error while seeking EOLN"
+msgstr "%s: ошибка ввода при поиске символа конца строки в файле"
+
+#, c-format
+msgid "%s: int32 value is out of range"
+msgstr "%s: число не попадает в диапазон 32-битных целых (int32) значений"
+
+#, c-format
+msgid "%s: int64 value is out of range"
+msgstr "%s: число не попадает в диапазон 64-битных целых (int64) значений"
+
+#, c-format
+msgid "%s: invalid arguments"
+msgstr "%s: недопустимый аргумент"
+
+#, c-format
+msgid "%s: invalid control character %d"
+msgstr "%s: недопустимый управляющий символ с кодом %d"
+
+#, c-format
+msgid "%s: invalid control character with code %d"
+msgstr "%s: недопустимый управляющий символ с кодом %d"
+
+#, c-format
+msgid "%s: long double value is out of range"
+msgstr "%s: число не попадает в диапазон типа long double"
+
+#, c-format
+msgid "%s: no double value"
+msgstr "%s: ожидалось значение типа double"
+
+#, c-format
+msgid "%s: no int32 value"
+msgstr "%s: ожидалось 32-битное целое (int32) значение"
+
+#, c-format
+msgid "%s: no int64 value"
+msgstr "%s: ожидалось 64-битное целое (int32) значение"
+
+#, c-format
+msgid "%s: no long double value"
+msgstr "%s: ожидалось значение типа long double"
+
+#, c-format
+msgid "%s: no uint32 value"
+msgstr "%s: ожидалось 32-битное беззнаковое целое (uint32) значение"
+
+#, c-format
+msgid "%s: no uint64 value"
+msgstr "%s: ожидалось 64-битное беззнаковое целое (uint64) значение"
+
+#, c-format
+msgid "%s: uint32 value is out of range"
+msgstr "%s: число не попадает в диапазон 32-битных беззнаковых целых (uint32) значений"
+
+#, c-format
+msgid "%s: uint64 value is out of range"
+msgstr "%s: число не попадает в диапазон 64-битных беззнаковых целых (uint64) значений"
+
+#, c-format
+msgid "%s: unexpected EOF"
+msgstr "%s: неожиданный конец файла"
+
+#, c-format
+msgid "%s: unexpected EOF while seeking EOLN"
+msgstr "%s: неожиданный конец файла при поиске символа конца строки в файле"
+
+#, c-format
+msgid "Answers differ: %s: output: %.10g, correct: %.10g"
+msgstr "Несовпадение ответов: %s: вывод: %.10g, эталон: %.10g"
+
+#, c-format
+msgid "Answers differ: %s: output: %.15Lg, correct: %.15Lg"
+msgstr "Несовпадение ответов: %s: вывод: %.15Lg, эталон: %.15Lg"
+
+#, c-format
+msgid "Answers differ: %s: output: %d, correct: %d"
+msgstr "Несовпадение ответов: %s: вывод: %d, эталон: %d"
+
+#, c-format
+msgid "Answers differ: %s: output: %lld, correct: %lld"
+msgstr "Несовпадение ответов: %s: вывод: %lld, эталон: %lld"
+
+#, c-format
+msgid "Answers differ: %s: output: %llu, correct: %llu"
+msgstr "Несовпадение ответов: %s: вывод: %llu, эталон: %llu"
+
+#, c-format
+msgid "Answers differ: %s: output: %u, correct: %u"
+msgstr "Несовпадение ответов: %s: вывод: %u, эталон: %u"
+
+msgid "Answers do not match"
+msgstr "Несовпадение ответов"
+
+#, c-format
+msgid "Answers do not match: output: %.10Lg, correct: %.10Lg"
+msgstr "Несовпадение ответов: вывод: %.10Lg, эталон: %.10Lg"
+
+#, c-format
+msgid "Answers do not match: output: %.10g, correct: %.10g"
+msgstr "Несовпадение ответов: вывод: %.10g, эталон: %.10g"
+
+#, c-format
+msgid "Answers do not match: output: %d, correct: %d"
+msgstr "Несовпадение ответов: вывод: %d, эталон: %d"
+
+#, c-format
+msgid "Answers do not match: output: %lld, correct: %lld"
+msgstr "Несовпадение ответов: вывод: %lld, эталон: %lld"
+
+#, c-format
+msgid "Answers do not match: output: %llu, correct: %llu"
+msgstr "Несовпадение ответов: вывод: %llu, эталон: %llu"
+
+#, c-format
+msgid "Answers do not match: output: %u, correct: %u"
+msgstr "Несовпадение ответов: вывод: %u, эталон: %u"
+
+#, c-format
+msgid "Cannot open correct output file '%s'"
+msgstr "Ошибка открытия эталонного файла '%s'"
+
+#, c-format
+msgid "Cannot open input directory '%s'"
+msgstr "Ошибка открытия каталога входных данных '%s'"
+
+#, c-format
+msgid "Cannot open input file '%s'"
+msgstr "Ошибка открытия входного файла '%s'"
+
+#, c-format
+msgid "Cannot open output directory '%s'"
+msgstr "Ошибка открытия каталога с результатом работы '%s'"
+
+#, c-format
+msgid "Cannot open output file '%s'"
+msgstr "Ошибка открытия выходного файла '%s'"
+
+msgid "Cannot parse EPS value"
+msgstr "Ошибка в записи значения переменной окружения EPS"
+
+msgid "Cannot read test count"
+msgstr "Ошибка при чтении общего числа тестов"
+
+#, c-format
+msgid "Cannot read test description %d"
+msgstr "Ошибка при чтении дескриптора теста %d"
+
+msgid "Correct answer is neither `yes' nor `no' (case insensitive)"
+msgstr ""
+"Эталонный ответ не является ни строкой 'yes', ни строкой 'no' (без учета "
+"регистра букв)"
+
+#, c-format
+msgid "Difference at byte %zu: output: %d, correct: %d"
+msgstr "Различие в байте %zu: вывод: %d, эталон: %d"
+
+#, c-format
+msgid "Different number of lines: output: %zu, correct: %zu"
+msgstr "Различие количестве строк: вывод: %zu, эталон: %zu"
+
+#, c-format
+msgid "Different size: output: %zu, correct: %zu"
+msgstr "Различие в размере: вывод: %zu, эталон: %zu"
+
+msgid "Environment variable EPS is not set"
+msgstr "Переменная окружения EPS не установлена"
+
+#, c-format
+msgid "Format string is too long: %zu"
+msgstr "Слишком длинная форматная строка: %zu"
+
+msgid "Input element is too long"
+msgstr "Элемент ввода имеет слишком большую длину"
+
+#, c-format
+msgid "Input error from %s file"
+msgstr "Ошибка ввода из файла %s"
+
+msgid "Input error while seeking EOLN"
+msgstr "Ошибка ввода при поиске символа окончания строки в файле"
+
+#, c-format
+msgid "Input error: %s"
+msgstr "Ошибка ввода: %s"
+
+msgid "Invalid arguments"
+msgstr "Недопустимый аргумент"
+
+#, c-format
+msgid "Invalid buf_size %zu"
+msgstr "Недопустимое значение параметра buf_size %zu"
+
+#, c-format
+msgid "Invalid control character %d"
+msgstr "Недопустимый управляющий символ с кодом %d"
+
+#, c-format
+msgid "Invalid control character with code %d"
+msgstr "Недопустимый управляющий символ с кодом %d"
+
+#, c-format
+msgid "Invalid number of arguments: %d instead of %d"
+msgstr "Недопустимое число аргументов: %d вместо %d"
+
+#, c-format
+msgid "Invalid result %d in description %d"
+msgstr "Неверный код результата %d в дескрипторе теста %d"
+
+#, c-format
+msgid "Invalid score %d in description %d"
+msgstr "Неверный балл %d в дескрипторе теста %d"
+
+#, c-format
+msgid "Invalid time %d in description %d"
+msgstr "Неверное значение %d в дескрипторе теста %d"
+
+msgid "Letter case mismatch"
+msgstr "Несовпадение регистра букв"
+
+#, c-format
+msgid ""
+"Line %zu differs: output:\n"
+">%s<\n"
+"correct:\n"
+">%s<"
+msgstr ""
+"Различие в строке %zu: вывод:\n"
+">%s<\n"
+"эталон:\n"
+">%s<"
+
+msgid "No final \\n in the output file"
+msgstr "В выходном файле отсутствует заключительный \\n"
+
+#, c-format
+msgid "Out of heap memory: calloc(%zu,%zu) failed"
+msgstr "Закончилась динамическая память при вызове calloc(%zu,%zu)"
+
+#, c-format
+msgid "Out of heap memory: malloc(%zu) failed"
+msgstr "Закончилась динамическая память при вызове malloc(%zu)"
+
+#, c-format
+msgid "Out of heap memory: realloc(...,%zu) failed"
+msgstr "Закончилась динамическая память при вызове realloc(...,%zu)"
+
+#, c-format
+msgid "Out of heap memory: strdup(`%s') failed"
+msgstr "Закончилась динамическая память при вызове strdup(`%s')"
+
+#, c-format
+msgid "Test count (%d) is invalid"
+msgstr "Недопустимое общее количество тестов (%d)"
+
+msgid "Test info is requested, but no code compiled in"
+msgstr "Запрошена информация о тесте, но данный режим не поддерживается"
+
+#, c-format
+msgid "Test info parsing failed: %s"
+msgstr "Ошибка разбора файла информации о тесте: %s"
+
+msgid "Too few numbers in the output"
+msgstr "В выводе слишком мало чисел"
+
+msgid "Too many numbers in the output"
+msgstr "В выводе слишком много чисел"
+
+msgid "Unexpected EOF"
+msgstr "Неожиданный конец файла"
+
+#, c-format
+msgid "Unexpected EOF while reading '%s'"
+msgstr "Неожиданный конец файла при чтении '%s'"
+
+msgid "Unexpected EOF while seeking EOLN"
+msgstr "Неожиданный конец файла при поиске символа конца строки в файле"
+
+msgid "User answer is neither `yes' nor `no' (case insensitive)"
+msgstr ""
+"Вывод на проверку не является ни строкой 'yes', ни строкой 'no' (без учета "
+"регистра букв)"
+
+#, c-format
+msgid "Wrong answer: output: %s, correct: %s"
+msgstr "Неправильный ответ: вывод: %s, эталон: %s"
+
+msgid "\\0 byte in file"
+msgstr "В файле обнаружен байт со значением 0"
+
+#, c-format
+msgid "alloca(%zu) failed"
+msgstr "Вызов alloca(%zu) завершился с ошибкой"
+
+msgid "correct"
+msgstr "эталон"
+
+msgid "correct: not a number"
+msgstr "эталон: нарушен формат записи чисел"
+
+msgid "fscanf returned 0!!!"
+msgstr "Вызов fscanf вернул 0!!!"
+
+msgid "output"
+msgstr "вывод"
+
+msgid "output: not a number"
+msgstr "вывод: нарушен формат записи чисел"
+
+msgid "test correct output"
+msgstr "эталонный вывод"
+
+msgid "test input data"
+msgstr "входные данные"
+
+msgid "user program output"
+msgstr "вывод программы"

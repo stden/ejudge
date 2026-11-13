@@ -1,0 +1,232 @@
+2013-02-08 (r7354) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c, tables.inc.c:
+	support for IPv6 is implemented.
+
+2013-02-05 (r7339) Alexander Chernov  <cher@ejudge.ru>
+
+	* tables.inc.c:
+	copyright notice is updated;
+	ej_ip_t -> ej_ip4_t;
+	transition to IPv6 support is started.
+
+2013-01-23 (r7280) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c: copyright notice is updated;
+	'eoln_type' column is added;
+
+	* tables.inc.c: copyright notice is updated;
+	'eoln_type' column is added.
+
+2012-11-03 (r7124) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	(set_runlog_func) non-empty runlog case is handled.
+
+2012-11-01 (r7116) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	'passed_mode' field handling is improved.
+
+2012-11-01 (r7113) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c: copyright notice is updated;
+	(change_status_func) 'new_passed_mode' parameter is added;
+	(change_status_2_func) the same;
+	(change_status_3_func) the same.
+
+	* rldb_plugin.c:
+	(change_status_func) 'new_passed_mode' parameter is added;
+	(change_status_2_func) the same;
+	(change_status_3_func) the same.
+
+2012-11-01 (r7110) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c, tables.inc.c:
+	run_version is boosted to 4;
+	handling of new column 'run_version' is added.
+
+2012-06-28 (r6920) Alexander Chernov  <cher@ejudge.ru>
+
+	* tables.inc.c: copyright notice is updated;
+	'run_uuid' table column is supported.
+
+	* rldb_mysql.c:
+	'run_uuid' table column is supported.
+
+2012-06-28 (r6915) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	'examinable', 'examiners', and 'exam_score' fields are no longer used.
+
+2012-05-09 (r6814) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	(parse_sha1) function is moved to misctext.[ch];
+	(load_runs) use of 'parse_sha1' is updated.
+
+2012-05-05 (r6800) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c: copyright notice is updated;
+	(load_runs) EMPTY runs are not ignored;
+	(find_insert_point) EMPTY runs are not ignored.
+
+2012-02-07 (r6633) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c: copyright notice is updated;
+	gcc 4.6 warning fixed.
+
+2011-07-17 (r6409) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(prepare_func) 'const' added to 'config' parameter.
+
+	* rldb_mysql.c:
+	(prepare_func) 'const' added to 'config' parameter.
+
+2011-03-27 (r6188) Alexander Chernov  <cher@ejudge.ru>
+
+	* main.make, Makefile.in:
+	reuse dependency is removed.
+
+2011-03-26 (r6141) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	"reuse_logger.h" is used instead of <reuse/logger.h>.
+
+2011-03-26 (r6128) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	copyright notice is updated;
+	"reuse_xalloc.h" is included instead of <reuse/xalloc.h>.
+
+2011-03-01 (r6102) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(change_status_4_func) new prototype is added.
+
+	* rldb_mysql.c:
+	(change_status_4_func) new function.
+
+2011-02-28 (r6099) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c: copyright notice is updated;
+	(change_status_3_func) new function prototype is added.
+
+	* rldb_mysql.c: copyright notice is updated;
+	(change_status_3_func) new function.
+
+2010-11-03 (r6026) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	(check_func) the code is moved to a plugin independable module as
+	  'run_fix_runlog_time'.
+
+2010-11-02 (r6021) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(check_func) new function prototype.
+
+	* rldb_mysql.c:
+	(check_func) new function to check the time consistency of the log
+	  and fix it.
+
+2010-02-23 (r5774) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c: copyright notice is updated;
+	(change_status_2_func) new function prototype.
+
+	* rldb_mysql.c:
+	(change_status_2_func) new function.
+
+2010-02-23 (r5766) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c, tables.inc.c: copyright notice is updated;
+	new fields `is_marked', `is_saved', `saved_status', `saved_score',
+	`saved_test' are handled.
+
+2008-12-31 (r5533) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	`close_memstream' is used to close the memory streams opened
+	with `open_memstream'.
+
+2008-11-15 (r5310) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c, rldb_mysql.c:
+	(reset_func) parameters are renamed:
+	  `new_duration' -> `init_duration',
+	  `new_sched_time' -> `init_sched_time',
+	  `new_finish_time' -> `init_finish_time'.
+
+2008-11-15 (r5308) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(open_func) `init_sched_time' parameter is added;
+	(reset_func) `init_sched_time' parameter is added.
+
+	* rldb_mysql.c:
+	(load_header) `init_sched_time' parameter is added;
+	  the `init_sched_time' is written to the header;
+	(open_func) `init_sched_time' parameter is added;
+	(reset_func) `new_sched_time' parameter is added;
+	  `new_sched_time' is written to the header.
+
+2008-11-13 (r5291) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	(set_runlog_func) basically implemented;
+	(squeeze_func) just error is returned.
+
+2008-11-12 (r5277) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c: reformatted.
+
+2008-11-12 (r5275) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c, tables.inc.c:
+	plugin `common_mysql' is used.
+
+2008-11-12 (r5273) Alexander Chernov  <cher@ejudge.ru>
+
+	* mysql_utils.inc.c, mysql_values.inc.c: no longer used.
+
+2008-11-10 (r5268) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	(struct rldb_mysql_state) `miface', `mdata' fields are added;
+	(prepare_func) `common_mysql' plugin is loaded.
+
+2008-11-10 (r5264) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c:
+	(init_func) prototype is changed;
+	(finish_func) prototype is changed;
+	(prepare_func) prototype is changed.
+
+	* rldb_mysql.c:
+	(plugin_rldb_mysql) initialization is changed;
+	(init_func) prototype is changed;
+	(finish_func) prototype is changed;
+	(prepare_func) prototype is changed.
+
+2008-10-10 (r5182) Alexander Chernov  <cher@ejudge.ru>
+
+	* methods.inc.c, tables.inc.c:
+	initial revision
+
+2008-10-09 (r5181) Alexander Chernov  <cher@ejudge.ru>
+
+	* mysql_values.inc.c, mysql_utils.inc.c:
+	initial revision
+
+2008-10-01 (r5133) Alexander Chernov  <cher@ejudge.ru>
+
+	* rldb_mysql.c:
+	initial revision
+
+2008-10-01 (r5129) Alexander Chernov  <cher@ejudge.ru>
+
+	* main.make, Makefile.in, empty.make:
+	initial revision
+

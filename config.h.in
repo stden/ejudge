@@ -1,0 +1,171 @@
+/* -*- mode:c -*- */
+/* $Id: config.h.in 7556 2013-11-07 11:12:15Z cher $ */
+
+#ifndef __CONFIG_H__
+#define __CONFIG_H__
+
+/* a suffix for CGI programs */
+#undef CGI_PROG_SUFFIX
+
+/* whether internalization is enabled */
+#undef CONF_HAS_LIBINTL
+
+/* the installation prefix directory */
+#undef EJUDGE_PREFIX_DIR
+
+/* the installation libexec directory */
+#undef EJUDGE_LIBEXEC_DIR
+
+/* the installation lib directory (native libs) */
+#undef EJUDGE_LIB_DIR
+
+/* the installation lib32 directory (32-bit compatibility libs) */
+#undef EJUDGE_LIB32_DIR
+
+/* the default path to the l10n_dir */
+#undef EJUDGE_LOCALE_DIR
+
+/* the path to the ejudge server binaries (bin or libexec/ejudge) */
+#undef EJUDGE_SERVER_BIN_PATH
+
+/* the path to the `serve' program */
+#undef EJUDGE_SERVE_PATH
+
+/* the path to the `run' program */
+#undef EJUDGE_RUN_PATH
+
+/* the path to the script directory */
+#undef EJUDGE_SCRIPT_DIR
+
+/* the path to the language script directory */
+#undef EJUDGE_LANG_CONFIG_DIR
+
+/* the path to the ejudge's cgi programs */
+#undef EJUDGE_CGI_BIN_DIR
+
+/* the default charset */
+#undef EJUDGE_CHARSET
+
+/* the default path to the userlist-serve socket */
+#undef EJUDGE_SOCKET_PATH
+
+/* the default path to the super-server control socket */
+#undef EJUDGE_SUPER_SERVE_SOCKET
+
+/* the default path to the new-server control socket */
+#undef EJUDGE_NEW_SERVER_SOCKET
+
+/* the path to the ejudge configuration directory */
+#undef EJUDGE_CONF_DIR
+
+/* the default location of the ejudge.xml configuration file */
+#undef EJUDGE_XML_PATH
+
+/* the default path to the contests configuration directory */
+#undef EJUDGE_CONTESTS_DIR
+
+/* the path to the contests home directory */
+#undef EJUDGE_CONTESTS_HOME_DIR
+
+/* the path to the local state directory */
+#undef EJUDGE_LOCAL_DIR
+
+/* path (absolute or relative) to CGI configuration files */
+#undef CGI_DATA_PATH
+
+/* whether libcap and CAP_SYS_OPERATIONS is ok */
+#undef CONF_HAS_LIBCAP
+
+/* whether kernel patch is ok (used only by ejudge-setup!) */
+#undef CONF_HAS_SECURE_EXEC
+
+/* whether MySQL is detected */
+#undef CONF_HAS_MYSQL
+
+/* terminal controlling facilities */
+#undef HAVE_TERMIOS_H
+
+#undef HAVE_ICONV_H
+
+#undef HAVE_PWD_H
+
+/* CAP_SYS_OPERATIONS bit */
+#undef HAVE_CAP_SYS_OPERATIONS
+
+/* non-standard functions */
+#undef HAVE_STRNLEN
+
+#undef HAVE_OPEN_MEMSTREAM
+
+#undef HAVE_FMEMOPEN
+
+#undef HAVE_TRUNCATE
+
+#undef HAVE_SETSID
+
+#undef HAVE_PSELECT
+
+#undef HAVE_FERROR_UNLOCKED
+
+#undef HAVE_FGETS_UNLOCKED
+
+/* iconv needs `const' for its second argument */
+#undef CONF_ICONV_NEEDS_CONST
+
+#undef HAVE_SO_PASSCRED
+
+#undef HAVE_SIOCINQ
+
+#undef HAVE_F_NOTIFY
+
+/* path to the web server cgi-bin dir */
+#undef EJUDGE_HTTPD_CGI_BIN_DIR
+
+/* path to the web server html documents dir */
+#undef EJUDGE_HTTPD_HTDOCS_DIR
+
+/* whether AJAX is enabled */
+#undef CONF_ENABLE_AJAX
+
+/* prefix for HTML style files */
+#undef CONF_STYLE_PREFIX
+
+/* libzip available */
+#undef CONF_HAS_LIBZIP
+
+/* libcurl available */
+#undef CONF_HAS_LIBCURL
+
+/* libuuid available */
+#undef CONF_HAS_LIBUUID
+
+/* regex.h available */
+#undef CONF_HAS_REGEX
+
+/* DOS path rules */
+#undef CONF_DOS_FILENAMING
+
+/* UNIX path rules */
+#undef CONF_UNIX_FILENAMING
+
+/* the suffix of executable files */
+#undef CONF_EXE_SUFFIX
+
+/* directory separator */
+#undef CONF_DIRSEP
+
+/* path separator */
+#undef CONF_PATHSEP
+
+/* 64-bit native platform */
+#undef CONF_64_BIT
+
+/* if double == long double */
+#undef R_LONG_DOUBLE_IS_DOUBLE
+
+#undef R_HAS_LONGLONG
+
+#undef R_HAS___INT64
+
+#endif /* __CONFIG_H__ */
+

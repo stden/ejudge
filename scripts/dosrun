@@ -1,0 +1,36 @@
+#!/bin/bash
+# $Id: dosrun 5683 2010-01-19 10:04:28Z cher $
+# Copyright (c) 2003 Alexander Chernov
+
+# This script is not actually used.
+# For an actual program to start dosemu see ../extra/dosrun3.c.
+
+# just in case...
+chmod 755 .
+
+# DOSEMU environment expects file to be named program.exe
+mv $1 program.exe
+
+# DOSEMU runs as nobody and has no perms to write to the working dir
+> output
+> error
+> e
+
+# remove write permissions
+chmod 555 .
+
+# set path to the dos executable
+if [ x"${DOSPATH}" = x ]
+then
+  echo "DOSPATH environment variable is not set" > error
+  echo 100 > e
+  exit 100
+fi
+
+# Run dosemu
+exec ${DOSPATH} -I 'video { none }'
+
+# Something went wrong
+echo "exec ${DOSPATH} failed" > error
+echo 100 > e
+exit 100

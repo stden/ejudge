@@ -1,0 +1,5 @@
+#! /bin/sh
+# $Id: rcc 5985 2010-09-05 09:46:33Z cher $
+
+touch *_meta.c *_meta.h
+exit 0

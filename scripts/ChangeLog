@@ -1,0 +1,342 @@
+2013-01-23 (r7292) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in, pasabc-linux.in, lang_ids.cfg, pasabc-linux-version.in:
+	support for Pascal ABC.NET under Mono is added.
+
+2012-11-20 (r7182) Alexander Chernov  <cher@ejudge.ru>
+
+	* make-vg-version.in, Makefile.in, make-version.in, make-vg.in, lang_ids.cfg:
+	support for make-valgrind language processor is added.
+
+2012-06-21 (r6904) Alexander Chernov  <cher@ejudge.ru>
+
+	* dcc-version.in: copyright notice is updated;
+	architecture is linux-shared-32.
+
+	* gfortran-version.in: copyright notice is updated;
+	language is defined secure.
+
+	* ghc-version.in: copyright notice is updated;
+	language is defined secure.
+
+2012-06-19 (r6901) Alexander Chernov  <cher@ejudge.ru>
+
+	* gprolog.in: copyright notice is updated;
+	command line arguments are updated.
+
+2012-05-27 (r6861) Alexander Chernov  <cher@ejudge.ru>
+
+	* runvg.in, g++-vg.in, gcc-vg.in, g++-vg-version.in, gcc-vg-version.in:
+	initial revision
+
+2012-05-27 (r6860) Alexander Chernov  <cher@ejudge.ru>
+
+	* lang_ids.cfg, Makefile.in:
+	gcc-vg, g++-vg compilators support is added.
+
+2012-03-30 (r6701) Alexander Chernov  <cher@ejudge.ru>
+
+	* fpc.in: copyright notice is updated;
+	TPC compatibility mode is removed.
+
+2011-12-14 (r6557) Alexander Chernov  <cher@ejudge.ru>
+
+	* make.in: typo is fixed.
+
+2011-12-09 (r6539) Alexander Chernov  <cher@ejudge.ru>
+
+	* make.in: EJ_MAKE_CFLAGS, EJ_MAKE_CXXFLAGS are supported.
+
+2011-09-07 (r6416) Alexander Chernov  <cher@ejudge.ru>
+
+	* javac-version.in: copyright notice is updated;
+	support for java 7 is added.
+
+2011-04-01 (r6213) Alexander Chernov  <cher@ejudge.ru>
+
+	* php-version.in:
+	autodetection of the PHP version is improved.
+
+2011-03-18 (r6118) Alexander Chernov  <cher@ejudge.ru>
+
+	* perl-version.in: copyright notice is updated;
+	perl version detection is improved.
+
+2010-11-01 (r6018) Alexander Chernov  <cher@ejudge.ru>
+
+	* python3.in, python3-version.in, lang_ids.cfg, Makefile.in:
+	python3 support is implemented.
+
+2010-09-05 (r5985) Alexander Chernov  <cher@ejudge.ru>
+
+	* rcc:
+	Fixed PRs #39, #40.
+
+2010-01-07 (r5608) Alexander Chernov  <cher@ejudge.ru>
+
+	* gfortran.in, gcj.in, g77.in, gfortran-version.in, g77-version.in, gpc.in, g++.in, gcc.in:
+	copyright notice is updated;
+	`-s' option is removed as stripping does not work
+	for static executables.
+
+2008-12-24 (r5461) Alexander Chernov  <cher@ejudge.ru>
+
+	* mzscheme-version.in, yabasic-version.in, g++-version.in, bpp-version.in, python-version.in, ruby-version.in, mcs-version.in, gfortran-version.in, javac-version.in, tpc-version.in, bcc-version.in, php-version.in, vbnc-version.in, dcc-version.in, gcc-version.in, qb-version.in, perl-version.in, gcj-version.in, g77-version.in, fpc-version.in, gpc-version.in, gprolog-version.in:
+	better /bin/sh compitibility
+
+2008-11-04 (r5236) Alexander Chernov  <cher@ejudge.ru>
+
+	* javac.in, runjava.in: JAVA_HOME setting is avoided.
+
+	* python.in: the default charset it set to iso8859-1.
+
+2008-06-30 (r4912) Alexander Chernov  <cher@ejudge.ru>
+
+	* master.c, register.c, serve.c, serve-cmd.c, team.c: removed.
+
+2008-03-16 (r4805) Alexander Chernov  <cher@ejudge.ru>
+
+	* yabasic-version.in, mzscheme-version.in, g++-version.in, perl.in, gcj.in, python-version.in, g77.in, mcs-version.in, mbas-version.in, fpc.in, dcc-version.in, Makefile.in, txt.in, gfortran.in, javac.in, perl-version.in, gcj-version.in, g77-version.in, fpc-version.in, gcc.in, txt-version.in, gfortran-version.in, javac-version.in, gpc.in, gprolog.in, mzscheme.in, yabasic.in, g++.in, gcc-version.in, python.in, mcs.in, mbas.in, dcc.in, gpc-version.in, gprolog-version.in, runmono.in, lang-config.sh.in:
+	copyright notice is updated;
+	scripting model is changed.
+
+2008-03-07 (r4762) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: copyright notice is updated;
+	gfortran is added.
+
+	* gfortran.in, gfortran-version.in:
+	initial revision.
+
+2008-02-25 (r4703) Alexander Chernov  <cher@ejudge.ru>
+
+	* gcc.in, g++.in: copyright notice is updated;
+	LANG environment variable is unset.
+
+2007-08-08 (r4297) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: scripts are installed to `${libexecdir}/ejudge/lang'
+	  instead of `${libexecdir}/ejudge'.
+
+	* javac.in:
+	path to `ej-javac' is updated accordingly.
+
+2007-08-05 (r4277) Alexander Chernov  <cher@ejudge.ru>
+
+	* javac.in, javac-version.in, runjava.in: copyright notice is updated;
+	JAVA_HOME is not set, if it is aready set.
+
+2007-07-28 (r4241) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in: copyright year is updated;
+	`runperl' added to script list.
+
+2006-12-14 (r3741) Alexander Chernov  <cher@ejudge.ru>
+
+	* javac.in: copyright notice is updated;
+	  `ej-javac' is used as compile helper.
+	* runjava.in: copyright notice is updated;
+	  `-jar' option is used to invoke compiled jars.
+
+2006-11-13 (r3663) Alexander Chernov  <cher@ejudge.ru>
+
+	* Makefile.in:
+	Mono-related language scripts are added.
+
+2006-06-10 (r3156) Alexander Chernov  <cher@ispras.ru>
+
+	* ChangeLog:
+	Transition from CVS to SVN.
+
+2006-06-05  Alexander Chernov  <cher@ispras.ru>
+
+	* txt.in, txt-version.in:
+	initial revision
+
+	* Makefile.in:
+	support for txt, txt-version scripts added.
+
+2005-11-16  Alexander Chernov  <cher@ispras.ru>
+
+	* dcc.in:
+	compiler flags are not set by default.
+
+2005-10-24  Alexander Chernov  <cher@ispras.ru>
+
+	* festival.in:
+	new error codes (Memory Limit Exceeded, Security Error) are supported.
+
+2005-08-19  Alexander Chernov  <cher@ispras.ru>
+
+	* dcc-version.in, fpc-version.in, g++-version.in, g77-version.in, gcc-version.in, gcj-version.in, gpc-version.in, gprolog-version.in, javac-version.in, mbas-version.in, mcs-version.in, mzscheme-version.in, perl-version.in, python-version.in, yabasic-version.in:
+	Added check, that the compiler program is runnable before
+	extracting its version.
+
+2005-07-22  Alexander Chernov  <cher@ispras.ru>
+
+	* runperl.in: initial revision
+
+2005-07-21  Alexander Chernov  <cher@ispras.ru>
+
+	* fpc-version.in, g++-version.in, g77-version.in, gcc-version.in, gcj-version.in, gpc-version.in, gprolog-version.in, javac-version.in, mbas-version.in, mcs-version.in, mzscheme-version.in, perl-version.in, python-version.in, yabasic-version.in, dcc-version.in:
+	Support for -p option (print the compiler path and exit) is added.
+
+2005-07-03  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: yabasic-version script is added.
+
+2005-06-26  Alexander Chernov  <cher@ispras.ru>
+
+	* dcc-version.in, fpc-version.in, g++-version.in, g77-version.in, gcc-version.in, gcj-version.in, gpc-version.in, gprolog-version.in, javac-version.in, mbas-version.in, mcs-version.in, mzscheme-version.in, perl-version.in, python-version.in, yabasic-version.in:
+	support for -f option is added.
+
+	* Makefile.in: version scripts are added.
+
+	* gcj.in, yabasic.in, python.in, perl.in, mzscheme.in, gprolog.in, gpc.in, g77.in, g++.in, fpc.in, dcc.in:
+	copyright notice is updated;
+	e-mail address added;
+	EJUDGE_FLAGS environment variable is supported.
+
+	* yabasic-version.in, python-version.in, perl-version.in, mzscheme-version.in, mcs-version.in, mbas-version.in, javac-version.in, g++-version.in, gprolog-version.in, gpc-version.in, gcj-version.in, gcc-version.in, g77-version.in, fpc-version.in, dcc-version.in:
+	initial revision
+
+2005-04-10  Alexander Chernov  <cher@ispras.ru>
+
+	* mbas.in: initial revision
+
+2005-04-09  Alexander Chernov  <cher@ispras.ru>
+
+	* mcs.in, runmono.in: initial revision
+
+2004-10-27  Alexander Chernov  <cher@ispras.ru>
+
+	* fileio.policy, default.policy: comments in policy file are fixed.
+
+	* javac.in: -Xlint:unchecked option is added.
+
+	* runjava.in: security policy support is improved
+
+2004-10-25  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: added rules to install Java security policy files.
+
+	* javac.in:
+	nested classes are supported: all the resulted .class files are
+	packed into one .jar archive.
+
+	* runjava.in:
+	Java security policy is now configurable via EJUDGE_JAVA_POLICY
+	environment variable.
+
+	* default.policy, fileio.policy: initial revision
+
+2004-10-21  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: javac and runjava scripts are added.
+
+	* javac.in, runjava.in: initial revision
+
+2004-10-11  Alexander Chernov  <cher@ispras.ru>
+
+	* festival.in:
+	support for "Partial solution" error code and for score reporting is
+	added.
+
+2004-09-27  Alexander Chernov  <cher@ispras.ru>
+
+	* gcc.in:
+	environment variable EJUDGE_FLAGS is supported. The variable may
+	contain additional flags, which are passed to the compiler.
+
+2004-09-18  Alexander Chernov  <cher@ispras.ru>
+
+	* festival.in: added space after '.' in message.
+
+2004-09-17  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: festival script added.
+
+	* festival.in: initial revision
+
+2004-05-26  Alexander Chernov  <cher@ispras.ru>
+
+	* gcj.in: a dynamic executable is generated;
+	the source file is renamed to Main.java.
+
+2004-05-18  Alexander Chernov  <cher@ispras.ru>
+
+	* yabasic.in, python.in, perl.in, mzscheme.in, gprolog.in, gpc.in, gcj.in, gcc.in, g77.in, g++.in, fpc.in, dcc.in:
+	adapted to the new `configure' environment.
+
+	* Makefile.in: SCRIPTS are also removed on `distclean' rule.
+
+2004-05-04  Alexander Chernov  <cher@ispras.ru>
+
+	* Makefile.in: initial revision
+
+	* fpc.in: excessive run-time checkings are disabled.
+
+2003-11-10  Alexander Chernov  <cher@ispras.ru>
+
+	* bpcemu, dcc.in, dosrun, fpc.in, g++.in, g77.in, gcc.in, gcj.in, gpc.in, mzscheme.in, perl.in, python.in, yabasic.in:
+	*** empty log message ***
+
+	* gprolog.in: initial revision
+
+2003-09-06  Alexander Chernov  <cher@ispras.ru>
+
+	* fpc.in: Free Pascal 1.0.10 is used.
+
+2003-06-30  Alexander Chernov  <cher@ispras.ru>
+
+	* python.in, python.in: *** empty log message ***
+
+	* perl.in: minor changes in comments.
+
+2003-06-28  Alexander Chernov  <cher@ispras.ru>
+
+	* mzscheme.in, perl.in, yabasic.in: initial revision
+
+2003-01-28  Alexander Chernov  <cher@ispras.ru>
+
+	* dcc.in: *** empty log message ***
+
+2003-01-27  Alexander Chernov  <cher@ispras.ru>
+
+	* dcc.in: initial revision
+
+2002-12-01  Alexander Chernov  <cher@ispras.ru>
+
+	* bpcemu: Initial revision
+
+2002-11-17  Alexander Chernov  <cher@ispras.ru>
+
+	* gcj.in: input .java file is forcebly renamed to Main.java
+
+	* g++.in, gcc.in: Math library is linked.
+
+2002-10-05  Alexander Chernov  <cher@ispras.ru>
+
+	* gcj.in, fpc.in, g77.in: initial revision
+
+	* g++.in, gcc.in, gpc.in: PATH setting is added
+
+2001-12-01  Alexander Chernov  <cher@ispras.ru>
+
+	* dosrun:
+	1) DOSPATH environment variable is used to get path to `dos';
+	2) error 100 is reported, if exec failed;
+	3) minor cleanups
+
+2001-11-07  Alexander Chernov  <cher@ispras.ru>
+
+	* g++.in: initial revision
+
+	* gcc.in: program is linked statically and stripped
+
+	* gpc.in: initial revision
+
+2001-01-26  Alexander Chernov  <cher@ispras.ru>
+
+	* bc.bat, bp.bat, dosrun, gcc.in: initial revision
+

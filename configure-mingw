@@ -1,0 +1,3 @@
+#! /bin/sh
+# $Id: configure-mingw 5386 2008-12-02 21:22:42Z cher $
+exec ./configure "$@" i686-pc-mingw32

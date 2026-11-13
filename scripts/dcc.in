@@ -1,0 +1,37 @@
+#!/bin/sh
+# $Id: dcc.in 5550 2009-02-19 18:14:43Z cher $
+# Copyright (c) 2003-2008 Alexander Chernov <cher@ejudge.ru>
+
+# using EJUDGE_FLAGS we may pass additional flags
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/dcc.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  version="unknown"
+  DCCRUN="dcc"
+  DCCDIR=
+fi
+
+if [ x"${version}" = x ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${DCCDIR}" != x ]
+then
+    PATH="${DCCDIR}:${PATH}"
+    KYLIXDIR="${DCCDIR}"
+    export KYLIXDIR
+fi
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+exec "${DCCRUN}" ${EJUDGE_FLAGS} -Q "$1"

@@ -1,0 +1,38 @@
+#!/bin/sh
+# $Id: gcj.in 5608 2010-01-07 19:51:45Z cher $
+# Copyright (c) 2002-2010 Alexander Chernov <cher@ejudge.ru>
+
+# using EJUDGE_FLAGS we may pass additional flags
+
+LANG_CONFIG_DIR="@lang_config_dir@"
+[ "${EJUDGE_LANG_CONFIG}" = "" ] && EJUDGE_LANG_CONFIG="${LANG_CONFIG_DIR}/gcj.cfg"
+
+if [ -f "${EJUDGE_LANG_CONFIG}" ]
+then
+  . "${EJUDGE_LANG_CONFIG}"
+else
+  version="unknown"
+  GCJRUN="gcj"
+  GCJDIR=
+fi
+
+if [ x"${version}" = x ]
+then
+  echo "This language is not supported." >&2
+  exit 1
+fi
+
+if [ x"${GCJDIR}" != x ]
+then
+    PATH="${GCJDIR}:${PATH}"
+fi
+
+[ x"${EJUDGE_FLAGS}" = x ] && EJUDGE_FLAGS="-Wall -O2"
+
+unset LANG
+unset LC_ALL
+unset LC_MESSAGES
+unset LANGUAGE
+
+mv "$1" Main.java
+exec "${GCJRUN}" ${EJUDGE_FLAGS} --main=Main Main.java -o "$2"
